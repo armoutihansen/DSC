@@ -34,10 +34,10 @@ def download_zip(name: str) -> bytes:
     return resp.content
 
 
-def extract_2023(content: bytes, raw_root: Path):
+def extract_2023(content: bytes, raw_dir: Path):
     """
     2023: outer zip contains inner zips (one per month).
-    We unzip outer, then unzip each inner zip's CSV files into raw_root/YYYY/MM.
+    We unzip outer, then unzip each inner zip's CSV files into raw_dir/YYYY/MM.
     """
     print("Extracting 2023 yearly archive (with inner zips)...")
     with ZipFile(BytesIO(content)) as outer:
@@ -62,7 +62,7 @@ def extract_2023(content: bytes, raw_root: Path):
                         continue
 
                     year, month = parse_year_month_from_name(csv_name)
-                    month_dir = raw_root / f"{year}" / f"{month:02d}"
+                    month_dir = raw_dir / f"{year}" / f"{month:02d}"
                     month_dir.mkdir(parents=True, exist_ok=True)
 
                     out_path = month_dir / Path(csv_name).name
@@ -71,13 +71,13 @@ def extract_2023(content: bytes, raw_root: Path):
                         dst.write(src.read())
 
 
-def extract_monthly(content: bytes, raw_root: Path, year: int, month: int):
+def extract_monthly(content: bytes, raw_dir: Path, year: int, month: int):
     """
     2024–2025: each monthly zip contains CSV files directly.
-    We unzip all CSVs into raw_root/YYYY/MM.
+    We unzip all CSVs into raw_dir/YYYY/MM.
     """
     print(f"Extracting monthly archive for {year}-{month:02d}...")
-    month_dir = raw_root / f"{year}" / f"{month:02d}"
+    month_dir = raw_dir / f"{year}" / f"{month:02d}"
     month_dir.mkdir(parents=True, exist_ok=True)
 
     with ZipFile(BytesIO(content)) as zf:
@@ -92,16 +92,16 @@ def extract_monthly(content: bytes, raw_root: Path, year: int, month: int):
                 dst.write(src.read())
 
 
-def main(raw_root: Path):
-    raw_root.mkdir(parents=True, exist_ok=True)
-    print(f"Saving data under: {raw_root.resolve()}")
+def main(raw_dir: Path):
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    print(f"Saving data under: {raw_dir.resolve()}")
 
     # 1) 2023: one yearly zip with inner zips
     yearly_2023 = "2023-citibike-tripdata.zip"
     content_2023 = download_zip(yearly_2023)
-    extract_2023(content_2023, raw_root)
+    extract_2023(content_2023, raw_dir)
 
-    # 2) 2024–2025: monthly zips with CSVs directly inside
+    # 2) 2024–2025: monthly zips with CSVs inside
     for year in (2024, 2025):
         for month in range(1, 13):
             if year == 2025 and month > 10:
@@ -114,21 +114,21 @@ def main(raw_root: Path):
                 print(f"  Skipping {zip_name}: {e}")
                 continue
 
-            extract_monthly(content, raw_root, year, month)
+            extract_monthly(content, raw_dir, year, month)
 
     print("Done.")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Download CitiBike tripdata (Jan 2023–Oct 2025) "
-                    "into raw_root/YYYY/MM/*.csv."
+        description="Download CitiBike tripdata"
+                    "into raw_dir/YYYY/MM/*.csv."
     )
     parser.add_argument(
-        "--raw_root",
+        "--raw_dir",
         type=Path,
         required=True,
         help="Root directory for raw data, e.g. ./data/raw/citibike",
     )
     args = parser.parse_args()
-    main(args.raw_root)
+    main(args.raw_dir)
