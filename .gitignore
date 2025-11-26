@@ -8,3 +8,4 @@ __pycache__/
 .conda/
 24_09-Data_Science_Challenge.pdf
 notebooks/catboost_info
+notebooks/.env
