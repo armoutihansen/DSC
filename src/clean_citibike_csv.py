@@ -121,16 +121,16 @@ def clean_citibike_csv(csv_path: Path) -> pd.DataFrame:
     df["end_station_name"]   = df["end_station_id"].map(end_map)
 
 
-    # # -------------------------------------------------------------------------
-    # # 4. Remove rows missing coordinates
-    # # -------------------------------------------------------------------------
-    # before = len(df)
-    # df = df.dropna(subset=["start_lat", "start_lng"])
-    # logger.info(f"{csv_path.name}: dropped {before - len(df)} rows missing start coords")
+    # -------------------------------------------------------------------------
+    # 4. Remove rows missing coordinates
+    # -------------------------------------------------------------------------
+    before = len(df)
+    df = df.dropna(subset=["start_lat", "start_lng"])
+    logger.info(f"{csv_path.name}: dropped {before - len(df)} rows missing start coords")
 
-    # before = len(df)
-    # df = df.dropna(subset=["end_lat", "end_lng"])
-    # logger.info(f"{csv_path.name}: dropped {before - len(df)} rows missing end coords")
+    before = len(df)
+    df = df.dropna(subset=["end_lat", "end_lng"])
+    logger.info(f"{csv_path.name}: dropped {before - len(df)} rows missing end coords")
 
 
     # -------------------------------------------------------------------------
@@ -149,7 +149,7 @@ def clean_citibike_csv(csv_path: Path) -> pd.DataFrame:
     return df, n_raw, n_clean
 
 ###############################################################################
-# Main script: Walk directory structure YYYY/MM under --raw_root
+# Main script: Walk directory structure YYYY/MM under --raw_dir
 ###############################################################################
 
 def main(raw_dir: Path, out_dir: Path):

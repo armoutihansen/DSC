@@ -3462,3 +3462,1069 @@ dtype: int64
 2025-11-25 16:22:52 - INFO - Percentage retained:        99.64%
 2025-11-25 16:22:52 - INFO - Percentage removed:         0.36%
 2025-11-25 16:22:52 - INFO - =============================================
+2025-11-27 07:26:49 - INFO - Raw root: ../data/raw/citibike
+2025-11-27 07:26:49 - INFO - Output root: ../data/processed/citibike
+2025-11-27 07:26:49 - INFO - Processing year 2023
+2025-11-27 07:26:49 - INFO - Processing month 2023-01
+2025-11-27 07:26:49 - INFO - Loading ../data/raw/citibike/2023/01/202301-citibike-tripdata_1.csv
+2025-11-27 07:26:51 - INFO - 202301-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:26:52 - INFO - 202301-citibike-tripdata_1.csv: dropped 2295 rows with missing station IDs
+2025-11-27 07:26:52 - INFO - 202301-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:26:52 - INFO - 202301-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:26:52 - INFO - 202301-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:26:52 - INFO - 202301-citibike-tripdata_1.csv: cleaned rows = 997705
+2025-11-27 07:26:52 - INFO - Loading ../data/raw/citibike/2023/01/202301-citibike-tripdata_2.csv
+2025-11-27 07:26:54 - INFO - 202301-citibike-tripdata_2.csv: initial rows = 795405
+2025-11-27 07:26:54 - INFO - 202301-citibike-tripdata_2.csv: dropped 2324 rows with missing station IDs
+2025-11-27 07:26:54 - INFO - 202301-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:26:54 - INFO - 202301-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:26:54 - INFO - 202301-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:26:54 - INFO - 202301-citibike-tripdata_2.csv: cleaned rows = 793081
+2025-11-27 07:26:55 - INFO - 2023-01: no missing values after combining chunks
+2025-11-27 07:26:56 - INFO - Wrote ../data/processed/citibike/2023/01/data.parquet
+2025-11-27 07:26:56 - INFO - Processing month 2023-02
+2025-11-27 07:26:56 - INFO - Loading ../data/raw/citibike/2023/02/202302-citibike-tripdata_1.csv
+2025-11-27 07:26:58 - INFO - 202302-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:26:58 - INFO - 202302-citibike-tripdata_1.csv: dropped 3229 rows with missing station IDs
+2025-11-27 07:26:58 - INFO - 202302-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:26:59 - INFO - 202302-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:26:59 - INFO - 202302-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:26:59 - INFO - 202302-citibike-tripdata_1.csv: cleaned rows = 996771
+2025-11-27 07:26:59 - INFO - Loading ../data/raw/citibike/2023/02/202302-citibike-tripdata_2.csv
+2025-11-27 07:27:00 - INFO - 202302-citibike-tripdata_2.csv: initial rows = 696166
+2025-11-27 07:27:00 - INFO - 202302-citibike-tripdata_2.csv: dropped 1260 rows with missing station IDs
+2025-11-27 07:27:01 - INFO - 202302-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:01 - INFO - 202302-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:01 - INFO - 202302-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:27:01 - INFO - 202302-citibike-tripdata_2.csv: cleaned rows = 694906
+2025-11-27 07:27:01 - INFO - 2023-02: no missing values after combining chunks
+2025-11-27 07:27:02 - INFO - Wrote ../data/processed/citibike/2023/02/data.parquet
+2025-11-27 07:27:02 - INFO - Processing month 2023-03
+2025-11-27 07:27:02 - INFO - Loading ../data/raw/citibike/2023/03/202303-citibike-tripdata_1.csv
+2025-11-27 07:27:04 - INFO - 202303-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:27:04 - INFO - 202303-citibike-tripdata_1.csv: dropped 2807 rows with missing station IDs
+2025-11-27 07:27:05 - INFO - 202303-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:05 - INFO - 202303-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:05 - INFO - 202303-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:27:05 - INFO - 202303-citibike-tripdata_1.csv: cleaned rows = 997193
+2025-11-27 07:27:05 - INFO - Loading ../data/raw/citibike/2023/03/202303-citibike-tripdata_2.csv
+2025-11-27 07:27:07 - INFO - 202303-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:27:07 - INFO - 202303-citibike-tripdata_2.csv: dropped 2428 rows with missing station IDs
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_2.csv: cleaned rows = 997572
+2025-11-27 07:27:08 - INFO - Loading ../data/raw/citibike/2023/03/202303-citibike-tripdata_3.csv
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_3.csv: initial rows = 118930
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_3.csv: dropped 48 rows with missing station IDs
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:27:08 - INFO - 202303-citibike-tripdata_3.csv: cleaned rows = 118882
+2025-11-27 07:27:08 - INFO - 2023-03: no missing values after combining chunks
+2025-11-27 07:27:10 - INFO - Wrote ../data/processed/citibike/2023/03/data.parquet
+2025-11-27 07:27:10 - INFO - Processing month 2023-04
+2025-11-27 07:27:10 - INFO - Loading ../data/raw/citibike/2023/04/202304-citibike-tripdata_1.csv
+2025-11-27 07:27:12 - INFO - 202304-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:27:12 - INFO - 202304-citibike-tripdata_1.csv: dropped 3661 rows with missing station IDs
+2025-11-27 07:27:13 - INFO - 202304-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:13 - INFO - 202304-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:13 - INFO - 202304-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:27:13 - INFO - 202304-citibike-tripdata_1.csv: cleaned rows = 996339
+2025-11-27 07:27:13 - INFO - Loading ../data/raw/citibike/2023/04/202304-citibike-tripdata_2.csv
+2025-11-27 07:27:15 - INFO - 202304-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:27:16 - INFO - 202304-citibike-tripdata_2.csv: dropped 3433 rows with missing station IDs
+2025-11-27 07:27:16 - INFO - 202304-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:16 - INFO - 202304-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:16 - INFO - 202304-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:27:16 - INFO - 202304-citibike-tripdata_2.csv: cleaned rows = 996567
+2025-11-27 07:27:16 - INFO - Loading ../data/raw/citibike/2023/04/202304-citibike-tripdata_3.csv
+2025-11-27 07:27:17 - INFO - 202304-citibike-tripdata_3.csv: initial rows = 749713
+2025-11-27 07:27:18 - INFO - 202304-citibike-tripdata_3.csv: dropped 59 rows with missing station IDs
+2025-11-27 07:27:18 - INFO - 202304-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:18 - INFO - 202304-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:18 - INFO - 202304-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:27:18 - INFO - 202304-citibike-tripdata_3.csv: cleaned rows = 749654
+2025-11-27 07:27:19 - INFO - 2023-04: no missing values after combining chunks
+2025-11-27 07:27:20 - INFO - Wrote ../data/processed/citibike/2023/04/data.parquet
+2025-11-27 07:27:20 - INFO - Processing month 2023-05
+2025-11-27 07:27:20 - INFO - Loading ../data/raw/citibike/2023/05/202305-citibike-tripdata_1.csv
+2025-11-27 07:27:22 - INFO - 202305-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:27:23 - INFO - 202305-citibike-tripdata_1.csv: dropped 3955 rows with missing station IDs
+2025-11-27 07:27:23 - INFO - 202305-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:23 - INFO - 202305-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:23 - INFO - 202305-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:27:23 - INFO - 202305-citibike-tripdata_1.csv: cleaned rows = 996045
+2025-11-27 07:27:23 - INFO - Loading ../data/raw/citibike/2023/05/202305-citibike-tripdata_2.csv
+2025-11-27 07:27:25 - INFO - 202305-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:27:26 - INFO - 202305-citibike-tripdata_2.csv: dropped 2792 rows with missing station IDs
+2025-11-27 07:27:26 - INFO - 202305-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:26 - INFO - 202305-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:26 - INFO - 202305-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:27:26 - INFO - 202305-citibike-tripdata_2.csv: cleaned rows = 997208
+2025-11-27 07:27:26 - INFO - Loading ../data/raw/citibike/2023/05/202305-citibike-tripdata_3.csv
+2025-11-27 07:27:28 - INFO - 202305-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:27:29 - INFO - 202305-citibike-tripdata_3.csv: dropped 941 rows with missing station IDs
+2025-11-27 07:27:29 - INFO - 202305-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:29 - INFO - 202305-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:29 - INFO - 202305-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:27:29 - INFO - 202305-citibike-tripdata_3.csv: cleaned rows = 999059
+2025-11-27 07:27:29 - INFO - Loading ../data/raw/citibike/2023/05/202305-citibike-tripdata_4.csv
+2025-11-27 07:27:30 - INFO - 202305-citibike-tripdata_4.csv: initial rows = 453144
+2025-11-27 07:27:30 - INFO - 202305-citibike-tripdata_4.csv: dropped 470 rows with missing station IDs
+2025-11-27 07:27:30 - INFO - 202305-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:30 - INFO - 202305-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:30 - INFO - 202305-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:27:30 - INFO - 202305-citibike-tripdata_4.csv: cleaned rows = 452674
+2025-11-27 07:27:31 - INFO - 2023-05: no missing values after combining chunks
+2025-11-27 07:27:33 - INFO - Wrote ../data/processed/citibike/2023/05/data.parquet
+2025-11-27 07:27:33 - INFO - Processing month 2023-06
+2025-11-27 07:27:33 - INFO - Loading ../data/raw/citibike/2023/06/202306-citibike-tripdata_1.csv
+2025-11-27 07:27:35 - INFO - 202306-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:27:35 - INFO - 202306-citibike-tripdata_1.csv: dropped 3844 rows with missing station IDs
+2025-11-27 07:27:36 - INFO - 202306-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:36 - INFO - 202306-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:27:36 - INFO - 202306-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:27:36 - INFO - 202306-citibike-tripdata_1.csv: cleaned rows = 996156
+2025-11-27 07:27:36 - INFO - Loading ../data/raw/citibike/2023/06/202306-citibike-tripdata_2.csv
+2025-11-27 07:27:38 - INFO - 202306-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:27:39 - INFO - 202306-citibike-tripdata_2.csv: dropped 1031 rows with missing station IDs
+2025-11-27 07:27:39 - INFO - 202306-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:39 - INFO - 202306-citibike-tripdata_2.csv: dropped 15 rows missing end coords
+2025-11-27 07:27:39 - INFO - 202306-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:27:39 - INFO - 202306-citibike-tripdata_2.csv: cleaned rows = 998954
+2025-11-27 07:27:39 - INFO - Loading ../data/raw/citibike/2023/06/202306-citibike-tripdata_3.csv
+2025-11-27 07:27:41 - INFO - 202306-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:27:42 - INFO - 202306-citibike-tripdata_3.csv: dropped 3310 rows with missing station IDs
+2025-11-27 07:27:42 - INFO - 202306-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:42 - INFO - 202306-citibike-tripdata_3.csv: dropped 27 rows missing end coords
+2025-11-27 07:27:42 - INFO - 202306-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:27:42 - INFO - 202306-citibike-tripdata_3.csv: cleaned rows = 996663
+2025-11-27 07:27:42 - INFO - Loading ../data/raw/citibike/2023/06/202306-citibike-tripdata_4.csv
+2025-11-27 07:27:43 - INFO - 202306-citibike-tripdata_4.csv: initial rows = 451542
+2025-11-27 07:27:44 - INFO - 202306-citibike-tripdata_4.csv: dropped 90 rows with missing station IDs
+2025-11-27 07:27:44 - INFO - 202306-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:44 - INFO - 202306-citibike-tripdata_4.csv: dropped 9 rows missing end coords
+2025-11-27 07:27:44 - INFO - 202306-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:27:44 - INFO - 202306-citibike-tripdata_4.csv: cleaned rows = 451443
+2025-11-27 07:27:44 - INFO - 2023-06: no missing values after combining chunks
+2025-11-27 07:27:46 - INFO - Wrote ../data/processed/citibike/2023/06/data.parquet
+2025-11-27 07:27:46 - INFO - Processing month 2023-07
+2025-11-27 07:27:46 - INFO - Loading ../data/raw/citibike/2023/07/202307-citibike-tripdata_1.csv
+2025-11-27 07:27:48 - INFO - 202307-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:27:49 - INFO - 202307-citibike-tripdata_1.csv: dropped 4062 rows with missing station IDs
+2025-11-27 07:27:49 - INFO - 202307-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:49 - INFO - 202307-citibike-tripdata_1.csv: dropped 69 rows missing end coords
+2025-11-27 07:27:49 - INFO - 202307-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:27:49 - INFO - 202307-citibike-tripdata_1.csv: cleaned rows = 995869
+2025-11-27 07:27:49 - INFO - Loading ../data/raw/citibike/2023/07/202307-citibike-tripdata_2.csv
+2025-11-27 07:27:51 - INFO - 202307-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:27:52 - INFO - 202307-citibike-tripdata_2.csv: dropped 1342 rows with missing station IDs
+2025-11-27 07:27:52 - INFO - 202307-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:52 - INFO - 202307-citibike-tripdata_2.csv: dropped 49 rows missing end coords
+2025-11-27 07:27:52 - INFO - 202307-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:27:52 - INFO - 202307-citibike-tripdata_2.csv: cleaned rows = 998609
+2025-11-27 07:27:52 - INFO - Loading ../data/raw/citibike/2023/07/202307-citibike-tripdata_3.csv
+2025-11-27 07:27:54 - INFO - 202307-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:27:55 - INFO - 202307-citibike-tripdata_3.csv: dropped 4011 rows with missing station IDs
+2025-11-27 07:27:55 - INFO - 202307-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:55 - INFO - 202307-citibike-tripdata_3.csv: dropped 15 rows missing end coords
+2025-11-27 07:27:55 - INFO - 202307-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:27:55 - INFO - 202307-citibike-tripdata_3.csv: cleaned rows = 995974
+2025-11-27 07:27:55 - INFO - Loading ../data/raw/citibike/2023/07/202307-citibike-tripdata_4.csv
+2025-11-27 07:27:57 - INFO - 202307-citibike-tripdata_4.csv: initial rows = 659577
+2025-11-27 07:27:57 - INFO - 202307-citibike-tripdata_4.csv: dropped 76 rows with missing station IDs
+2025-11-27 07:27:57 - INFO - 202307-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:27:57 - INFO - 202307-citibike-tripdata_4.csv: dropped 4 rows missing end coords
+2025-11-27 07:27:57 - INFO - 202307-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:27:57 - INFO - 202307-citibike-tripdata_4.csv: cleaned rows = 659497
+2025-11-27 07:27:58 - INFO - 2023-07: no missing values after combining chunks
+2025-11-27 07:28:00 - INFO - Wrote ../data/processed/citibike/2023/07/data.parquet
+2025-11-27 07:28:00 - INFO - Processing month 2023-08
+2025-11-27 07:28:00 - INFO - Loading ../data/raw/citibike/2023/08/202308-citibike-tripdata_1.csv
+2025-11-27 07:28:02 - INFO - 202308-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:28:02 - INFO - 202308-citibike-tripdata_1.csv: dropped 4971 rows with missing station IDs
+2025-11-27 07:28:03 - INFO - 202308-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:03 - INFO - 202308-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:03 - INFO - 202308-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:28:03 - INFO - 202308-citibike-tripdata_1.csv: cleaned rows = 995029
+2025-11-27 07:28:03 - INFO - Loading ../data/raw/citibike/2023/08/202308-citibike-tripdata_2.csv
+2025-11-27 07:28:05 - INFO - 202308-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:28:06 - INFO - 202308-citibike-tripdata_2.csv: dropped 268 rows with missing station IDs
+2025-11-27 07:28:06 - INFO - 202308-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:06 - INFO - 202308-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:06 - INFO - 202308-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:28:06 - INFO - 202308-citibike-tripdata_2.csv: cleaned rows = 999732
+2025-11-27 07:28:06 - INFO - Loading ../data/raw/citibike/2023/08/202308-citibike-tripdata_3.csv
+2025-11-27 07:28:08 - INFO - 202308-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:28:09 - INFO - 202308-citibike-tripdata_3.csv: dropped 4835 rows with missing station IDs
+2025-11-27 07:28:09 - INFO - 202308-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:09 - INFO - 202308-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:09 - INFO - 202308-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:28:09 - INFO - 202308-citibike-tripdata_3.csv: cleaned rows = 995165
+2025-11-27 07:28:09 - INFO - Loading ../data/raw/citibike/2023/08/202308-citibike-tripdata_4.csv
+2025-11-27 07:28:11 - INFO - 202308-citibike-tripdata_4.csv: initial rows = 964177
+2025-11-27 07:28:12 - INFO - 202308-citibike-tripdata_4.csv: dropped 639 rows with missing station IDs
+2025-11-27 07:28:12 - INFO - 202308-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:12 - INFO - 202308-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:12 - INFO - 202308-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:28:12 - INFO - 202308-citibike-tripdata_4.csv: cleaned rows = 963538
+2025-11-27 07:28:13 - INFO - 2023-08: no missing values after combining chunks
+2025-11-27 07:28:15 - INFO - Wrote ../data/processed/citibike/2023/08/data.parquet
+2025-11-27 07:28:15 - INFO - Processing month 2023-09
+2025-11-27 07:28:15 - INFO - Loading ../data/raw/citibike/2023/09/202309-citibike-tripdata_1.csv
+2025-11-27 07:28:17 - INFO - 202309-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:28:17 - INFO - 202309-citibike-tripdata_1.csv: dropped 5753 rows with missing station IDs
+2025-11-27 07:28:18 - INFO - 202309-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:18 - INFO - 202309-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:18 - INFO - 202309-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:28:18 - INFO - 202309-citibike-tripdata_1.csv: cleaned rows = 994247
+2025-11-27 07:28:18 - INFO - Loading ../data/raw/citibike/2023/09/202309-citibike-tripdata_2.csv
+2025-11-27 07:28:20 - INFO - 202309-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:28:21 - INFO - 202309-citibike-tripdata_2.csv: dropped 647 rows with missing station IDs
+2025-11-27 07:28:21 - INFO - 202309-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:21 - INFO - 202309-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:21 - INFO - 202309-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:28:21 - INFO - 202309-citibike-tripdata_2.csv: cleaned rows = 999353
+2025-11-27 07:28:21 - INFO - Loading ../data/raw/citibike/2023/09/202309-citibike-tripdata_3.csv
+2025-11-27 07:28:23 - INFO - 202309-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:28:24 - INFO - 202309-citibike-tripdata_3.csv: dropped 7759 rows with missing station IDs
+2025-11-27 07:28:24 - INFO - 202309-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:24 - INFO - 202309-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:24 - INFO - 202309-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:28:24 - INFO - 202309-citibike-tripdata_3.csv: cleaned rows = 992241
+2025-11-27 07:28:24 - INFO - Loading ../data/raw/citibike/2023/09/202309-citibike-tripdata_4.csv
+2025-11-27 07:28:25 - INFO - 202309-citibike-tripdata_4.csv: initial rows = 471148
+2025-11-27 07:28:26 - INFO - 202309-citibike-tripdata_4.csv: dropped 1024 rows with missing station IDs
+2025-11-27 07:28:26 - INFO - 202309-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:26 - INFO - 202309-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:26 - INFO - 202309-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:28:26 - INFO - 202309-citibike-tripdata_4.csv: cleaned rows = 470124
+2025-11-27 07:28:26 - INFO - 2023-09: no missing values after combining chunks
+2025-11-27 07:28:28 - INFO - Wrote ../data/processed/citibike/2023/09/data.parquet
+2025-11-27 07:28:28 - INFO - Processing month 2023-10
+2025-11-27 07:28:28 - INFO - Loading ../data/raw/citibike/2023/10/202310-citibike-tripdata_1.csv
+2025-11-27 07:28:30 - INFO - 202310-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:28:31 - INFO - 202310-citibike-tripdata_1.csv: dropped 6300 rows with missing station IDs
+2025-11-27 07:28:31 - INFO - 202310-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:31 - INFO - 202310-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:31 - INFO - 202310-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:28:31 - INFO - 202310-citibike-tripdata_1.csv: cleaned rows = 993700
+2025-11-27 07:28:31 - INFO - Loading ../data/raw/citibike/2023/10/202310-citibike-tripdata_2.csv
+2025-11-27 07:28:34 - INFO - 202310-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:28:34 - INFO - 202310-citibike-tripdata_2.csv: dropped 1800 rows with missing station IDs
+2025-11-27 07:28:35 - INFO - 202310-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:35 - INFO - 202310-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:35 - INFO - 202310-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:28:35 - INFO - 202310-citibike-tripdata_2.csv: cleaned rows = 998200
+2025-11-27 07:28:35 - INFO - Loading ../data/raw/citibike/2023/10/202310-citibike-tripdata_3.csv
+2025-11-27 07:28:37 - INFO - 202310-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:28:38 - INFO - 202310-citibike-tripdata_3.csv: dropped 8914 rows with missing station IDs
+2025-11-27 07:28:38 - INFO - 202310-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:38 - INFO - 202310-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:38 - INFO - 202310-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:28:38 - INFO - 202310-citibike-tripdata_3.csv: cleaned rows = 991086
+2025-11-27 07:28:38 - INFO - Loading ../data/raw/citibike/2023/10/202310-citibike-tripdata_4.csv
+2025-11-27 07:28:39 - INFO - 202310-citibike-tripdata_4.csv: initial rows = 725334
+2025-11-27 07:28:40 - INFO - 202310-citibike-tripdata_4.csv: dropped 1261 rows with missing station IDs
+2025-11-27 07:28:40 - INFO - 202310-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:40 - INFO - 202310-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:40 - INFO - 202310-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:28:40 - INFO - 202310-citibike-tripdata_4.csv: cleaned rows = 724073
+2025-11-27 07:28:40 - INFO - 2023-10: no missing values after combining chunks
+2025-11-27 07:28:42 - INFO - Wrote ../data/processed/citibike/2023/10/data.parquet
+2025-11-27 07:28:42 - INFO - Processing month 2023-11
+2025-11-27 07:28:42 - INFO - Loading ../data/raw/citibike/2023/11/202311-citibike-tripdata_1.csv
+2025-11-27 07:28:45 - INFO - 202311-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:28:45 - INFO - 202311-citibike-tripdata_1.csv: dropped 8664 rows with missing station IDs
+2025-11-27 07:28:45 - INFO - 202311-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:45 - INFO - 202311-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:46 - INFO - 202311-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:28:46 - INFO - 202311-citibike-tripdata_1.csv: cleaned rows = 991336
+2025-11-27 07:28:46 - INFO - Loading ../data/raw/citibike/2023/11/202311-citibike-tripdata_2.csv
+2025-11-27 07:28:48 - INFO - 202311-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:28:48 - INFO - 202311-citibike-tripdata_2.csv: dropped 3725 rows with missing station IDs
+2025-11-27 07:28:49 - INFO - 202311-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:49 - INFO - 202311-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:49 - INFO - 202311-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:28:49 - INFO - 202311-citibike-tripdata_2.csv: cleaned rows = 996275
+2025-11-27 07:28:49 - INFO - Loading ../data/raw/citibike/2023/11/202311-citibike-tripdata_3.csv
+2025-11-27 07:28:51 - INFO - 202311-citibike-tripdata_3.csv: initial rows = 816976
+2025-11-27 07:28:51 - INFO - 202311-citibike-tripdata_3.csv: dropped 907 rows with missing station IDs
+2025-11-27 07:28:51 - INFO - 202311-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:51 - INFO - 202311-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:51 - INFO - 202311-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:28:51 - INFO - 202311-citibike-tripdata_3.csv: cleaned rows = 816069
+2025-11-27 07:28:52 - INFO - 2023-11: no missing values after combining chunks
+2025-11-27 07:28:53 - INFO - Wrote ../data/processed/citibike/2023/11/data.parquet
+2025-11-27 07:28:53 - INFO - Processing month 2023-12
+2025-11-27 07:28:53 - INFO - Loading ../data/raw/citibike/2023/12/202312-citibike-tripdata_1.csv
+2025-11-27 07:28:55 - INFO - 202312-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:28:56 - INFO - 202312-citibike-tripdata_1.csv: dropped 3645 rows with missing station IDs
+2025-11-27 07:28:56 - INFO - 202312-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:56 - INFO - 202312-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:28:56 - INFO - 202312-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:28:56 - INFO - 202312-citibike-tripdata_1.csv: cleaned rows = 996355
+2025-11-27 07:28:56 - INFO - Loading ../data/raw/citibike/2023/12/202312-citibike-tripdata_2.csv
+2025-11-27 07:28:59 - INFO - 202312-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:28:59 - INFO - 202312-citibike-tripdata_2.csv: dropped 4098 rows with missing station IDs
+2025-11-27 07:28:59 - INFO - 202312-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:28:59 - INFO - 202312-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:00 - INFO - 202312-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:29:00 - INFO - 202312-citibike-tripdata_2.csv: cleaned rows = 995902
+2025-11-27 07:29:00 - INFO - Loading ../data/raw/citibike/2023/12/202312-citibike-tripdata_3.csv
+2025-11-27 07:29:00 - INFO - 202312-citibike-tripdata_3.csv: initial rows = 204874
+2025-11-27 07:29:00 - INFO - 202312-citibike-tripdata_3.csv: dropped 89 rows with missing station IDs
+2025-11-27 07:29:00 - INFO - 202312-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:00 - INFO - 202312-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:00 - INFO - 202312-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:29:00 - INFO - 202312-citibike-tripdata_3.csv: cleaned rows = 204785
+2025-11-27 07:29:00 - INFO - 2023-12: no missing values after combining chunks
+2025-11-27 07:29:02 - INFO - Wrote ../data/processed/citibike/2023/12/data.parquet
+2025-11-27 07:29:02 - INFO - Processing year 2024
+2025-11-27 07:29:02 - INFO - Processing month 2024-01
+2025-11-27 07:29:02 - INFO - Loading ../data/raw/citibike/2024/01/202401-citibike-tripdata_1.csv
+2025-11-27 07:29:04 - INFO - 202401-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:29:04 - INFO - 202401-citibike-tripdata_1.csv: dropped 3583 rows with missing station IDs
+2025-11-27 07:29:05 - INFO - 202401-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:05 - INFO - 202401-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:05 - INFO - 202401-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:29:05 - INFO - 202401-citibike-tripdata_1.csv: cleaned rows = 996417
+2025-11-27 07:29:05 - INFO - Loading ../data/raw/citibike/2024/01/202401-citibike-tripdata_2.csv
+2025-11-27 07:29:07 - INFO - 202401-citibike-tripdata_2.csv: initial rows = 888085
+2025-11-27 07:29:07 - INFO - 202401-citibike-tripdata_2.csv: dropped 2862 rows with missing station IDs
+2025-11-27 07:29:08 - INFO - 202401-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:08 - INFO - 202401-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:08 - INFO - 202401-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:29:08 - INFO - 202401-citibike-tripdata_2.csv: cleaned rows = 885223
+2025-11-27 07:29:08 - INFO - 2024-01: no missing values after combining chunks
+2025-11-27 07:29:09 - INFO - Wrote ../data/processed/citibike/2024/01/data.parquet
+2025-11-27 07:29:09 - INFO - Processing month 2024-02
+2025-11-27 07:29:09 - INFO - Loading ../data/raw/citibike/2024/02/202402-citibike-tripdata_1.csv
+2025-11-27 07:29:11 - INFO - 202402-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:29:12 - INFO - 202402-citibike-tripdata_1.csv: dropped 2598 rows with missing station IDs
+2025-11-27 07:29:12 - INFO - 202402-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:12 - INFO - 202402-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:12 - INFO - 202402-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:29:12 - INFO - 202402-citibike-tripdata_1.csv: cleaned rows = 997402
+2025-11-27 07:29:12 - INFO - Loading ../data/raw/citibike/2024/02/202402-citibike-tripdata_2.csv
+2025-11-27 07:29:15 - INFO - 202402-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:29:15 - INFO - 202402-citibike-tripdata_2.csv: dropped 3316 rows with missing station IDs
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_2.csv: cleaned rows = 996684
+2025-11-27 07:29:16 - INFO - Loading ../data/raw/citibike/2024/02/202402-citibike-tripdata_3.csv
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_3.csv: initial rows = 121501
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_3.csv: dropped 69 rows with missing station IDs
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:29:16 - INFO - 202402-citibike-tripdata_3.csv: cleaned rows = 121432
+2025-11-27 07:29:16 - INFO - 2024-02: no missing values after combining chunks
+2025-11-27 07:29:17 - INFO - Wrote ../data/processed/citibike/2024/02/data.parquet
+2025-11-27 07:29:17 - INFO - Processing month 2024-03
+2025-11-27 07:29:17 - INFO - Loading ../data/raw/citibike/2024/03/202403-citibike-tripdata_1.csv
+2025-11-27 07:29:20 - INFO - 202403-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:29:20 - INFO - 202403-citibike-tripdata_1.csv: dropped 4020 rows with missing station IDs
+2025-11-27 07:29:21 - INFO - 202403-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:21 - INFO - 202403-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:21 - INFO - 202403-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:29:21 - INFO - 202403-citibike-tripdata_1.csv: cleaned rows = 995980
+2025-11-27 07:29:21 - INFO - Loading ../data/raw/citibike/2024/03/202403-citibike-tripdata_2.csv
+2025-11-27 07:29:23 - INFO - 202403-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:29:24 - INFO - 202403-citibike-tripdata_2.csv: dropped 3296 rows with missing station IDs
+2025-11-27 07:29:24 - INFO - 202403-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:24 - INFO - 202403-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:24 - INFO - 202403-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:29:24 - INFO - 202403-citibike-tripdata_2.csv: cleaned rows = 996704
+2025-11-27 07:29:24 - INFO - Loading ../data/raw/citibike/2024/03/202403-citibike-tripdata_3.csv
+2025-11-27 07:29:25 - INFO - 202403-citibike-tripdata_3.csv: initial rows = 663295
+2025-11-27 07:29:26 - INFO - 202403-citibike-tripdata_3.csv: dropped 312 rows with missing station IDs
+2025-11-27 07:29:26 - INFO - 202403-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:26 - INFO - 202403-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:26 - INFO - 202403-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:29:26 - INFO - 202403-citibike-tripdata_3.csv: cleaned rows = 662983
+2025-11-27 07:29:26 - INFO - 2024-03: no missing values after combining chunks
+2025-11-27 07:29:28 - INFO - Wrote ../data/processed/citibike/2024/03/data.parquet
+2025-11-27 07:29:28 - INFO - Processing month 2024-04
+2025-11-27 07:29:28 - INFO - Loading ../data/raw/citibike/2024/04/202404-citibike-tripdata_1.csv
+2025-11-27 07:29:30 - INFO - 202404-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:29:30 - INFO - 202404-citibike-tripdata_1.csv: dropped 2702 rows with missing station IDs
+2025-11-27 07:29:31 - INFO - 202404-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:31 - INFO - 202404-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:31 - INFO - 202404-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:29:31 - INFO - 202404-citibike-tripdata_1.csv: cleaned rows = 997298
+2025-11-27 07:29:31 - INFO - Loading ../data/raw/citibike/2024/04/202404-citibike-tripdata_2.csv
+2025-11-27 07:29:33 - INFO - 202404-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:29:34 - INFO - 202404-citibike-tripdata_2.csv: dropped 4923 rows with missing station IDs
+2025-11-27 07:29:34 - INFO - 202404-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:34 - INFO - 202404-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:34 - INFO - 202404-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:29:34 - INFO - 202404-citibike-tripdata_2.csv: cleaned rows = 995077
+2025-11-27 07:29:34 - INFO - Loading ../data/raw/citibike/2024/04/202404-citibike-tripdata_3.csv
+2025-11-27 07:29:36 - INFO - 202404-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:29:37 - INFO - 202404-citibike-tripdata_3.csv: dropped 557 rows with missing station IDs
+2025-11-27 07:29:37 - INFO - 202404-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:37 - INFO - 202404-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:37 - INFO - 202404-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:29:37 - INFO - 202404-citibike-tripdata_3.csv: cleaned rows = 999443
+2025-11-27 07:29:37 - INFO - Loading ../data/raw/citibike/2024/04/202404-citibike-tripdata_4.csv
+2025-11-27 07:29:37 - INFO - 202404-citibike-tripdata_4.csv: initial rows = 217063
+2025-11-27 07:29:38 - INFO - 202404-citibike-tripdata_4.csv: dropped 388 rows with missing station IDs
+2025-11-27 07:29:38 - INFO - 202404-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:38 - INFO - 202404-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:38 - INFO - 202404-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:29:38 - INFO - 202404-citibike-tripdata_4.csv: cleaned rows = 216675
+2025-11-27 07:29:38 - INFO - 2024-04: no missing values after combining chunks
+2025-11-27 07:29:40 - INFO - Wrote ../data/processed/citibike/2024/04/data.parquet
+2025-11-27 07:29:40 - INFO - Processing month 2024-05
+2025-11-27 07:29:40 - INFO - Loading ../data/raw/citibike/2024/05/202405-citibike-tripdata_1.csv
+2025-11-27 07:29:42 - INFO - 202405-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:29:43 - INFO - 202405-citibike-tripdata_1.csv: dropped 3627 rows with missing station IDs
+2025-11-27 07:29:43 - INFO - 202405-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:43 - INFO - 202405-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:43 - INFO - 202405-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:29:43 - INFO - 202405-citibike-tripdata_1.csv: cleaned rows = 996373
+2025-11-27 07:29:43 - INFO - Loading ../data/raw/citibike/2024/05/202405-citibike-tripdata_2.csv
+2025-11-27 07:29:45 - INFO - 202405-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:29:46 - INFO - 202405-citibike-tripdata_2.csv: dropped 743 rows with missing station IDs
+2025-11-27 07:29:46 - INFO - 202405-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:46 - INFO - 202405-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:46 - INFO - 202405-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:29:46 - INFO - 202405-citibike-tripdata_2.csv: cleaned rows = 999257
+2025-11-27 07:29:46 - INFO - Loading ../data/raw/citibike/2024/05/202405-citibike-tripdata_3.csv
+2025-11-27 07:29:48 - INFO - 202405-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:29:49 - INFO - 202405-citibike-tripdata_3.csv: dropped 4761 rows with missing station IDs
+2025-11-27 07:29:49 - INFO - 202405-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:49 - INFO - 202405-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:49 - INFO - 202405-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:29:49 - INFO - 202405-citibike-tripdata_3.csv: cleaned rows = 995239
+2025-11-27 07:29:49 - INFO - Loading ../data/raw/citibike/2024/05/202405-citibike-tripdata_4.csv
+2025-11-27 07:29:51 - INFO - 202405-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:29:52 - INFO - 202405-citibike-tripdata_4.csv: dropped 1582 rows with missing station IDs
+2025-11-27 07:29:52 - INFO - 202405-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:52 - INFO - 202405-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:52 - INFO - 202405-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:29:52 - INFO - 202405-citibike-tripdata_4.csv: cleaned rows = 998418
+2025-11-27 07:29:52 - INFO - Loading ../data/raw/citibike/2024/05/202405-citibike-tripdata_5.csv
+2025-11-27 07:29:53 - INFO - 202405-citibike-tripdata_5.csv: initial rows = 133961
+2025-11-27 07:29:53 - INFO - 202405-citibike-tripdata_5.csv: dropped 136 rows with missing station IDs
+2025-11-27 07:29:53 - INFO - 202405-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:53 - INFO - 202405-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:53 - INFO - 202405-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:29:53 - INFO - 202405-citibike-tripdata_5.csv: cleaned rows = 133825
+2025-11-27 07:29:53 - INFO - 2024-05: no missing values after combining chunks
+2025-11-27 07:29:55 - INFO - Wrote ../data/processed/citibike/2024/05/data.parquet
+2025-11-27 07:29:55 - INFO - Processing month 2024-06
+2025-11-27 07:29:55 - INFO - Loading ../data/raw/citibike/2024/06/202406-citibike-tripdata_1.csv
+2025-11-27 07:29:57 - INFO - 202406-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:29:58 - INFO - 202406-citibike-tripdata_1.csv: dropped 6464 rows with missing station IDs
+2025-11-27 07:29:58 - INFO - 202406-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:29:58 - INFO - 202406-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:29:58 - INFO - 202406-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:29:58 - INFO - 202406-citibike-tripdata_1.csv: cleaned rows = 993536
+2025-11-27 07:29:58 - INFO - Loading ../data/raw/citibike/2024/06/202406-citibike-tripdata_2.csv
+2025-11-27 07:30:01 - INFO - 202406-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:30:01 - INFO - 202406-citibike-tripdata_2.csv: dropped 650 rows with missing station IDs
+2025-11-27 07:30:01 - INFO - 202406-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:01 - INFO - 202406-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:02 - INFO - 202406-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:30:02 - INFO - 202406-citibike-tripdata_2.csv: cleaned rows = 999350
+2025-11-27 07:30:02 - INFO - Loading ../data/raw/citibike/2024/06/202406-citibike-tripdata_3.csv
+2025-11-27 07:30:04 - INFO - 202406-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:30:04 - INFO - 202406-citibike-tripdata_3.csv: dropped 7436 rows with missing station IDs
+2025-11-27 07:30:05 - INFO - 202406-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:05 - INFO - 202406-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:05 - INFO - 202406-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:30:05 - INFO - 202406-citibike-tripdata_3.csv: cleaned rows = 992564
+2025-11-27 07:30:05 - INFO - Loading ../data/raw/citibike/2024/06/202406-citibike-tripdata_4.csv
+2025-11-27 07:30:07 - INFO - 202406-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:30:07 - INFO - 202406-citibike-tripdata_4.csv: dropped 846 rows with missing station IDs
+2025-11-27 07:30:08 - INFO - 202406-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:08 - INFO - 202406-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:08 - INFO - 202406-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:30:08 - INFO - 202406-citibike-tripdata_4.csv: cleaned rows = 999154
+2025-11-27 07:30:08 - INFO - Loading ../data/raw/citibike/2024/06/202406-citibike-tripdata_5.csv
+2025-11-27 07:30:09 - INFO - 202406-citibike-tripdata_5.csv: initial rows = 783576
+2025-11-27 07:30:10 - INFO - 202406-citibike-tripdata_5.csv: dropped 521 rows with missing station IDs
+2025-11-27 07:30:10 - INFO - 202406-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:10 - INFO - 202406-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:10 - INFO - 202406-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:30:10 - INFO - 202406-citibike-tripdata_5.csv: cleaned rows = 783055
+2025-11-27 07:30:11 - INFO - 2024-06: no missing values after combining chunks
+2025-11-27 07:30:13 - INFO - Wrote ../data/processed/citibike/2024/06/data.parquet
+2025-11-27 07:30:13 - INFO - Processing month 2024-07
+2025-11-27 07:30:13 - INFO - Loading ../data/raw/citibike/2024/07/202407-citibike-tripdata_1.csv
+2025-11-27 07:30:15 - INFO - 202407-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:30:16 - INFO - 202407-citibike-tripdata_1.csv: dropped 1093 rows with missing station IDs
+2025-11-27 07:30:16 - INFO - 202407-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:16 - INFO - 202407-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:16 - INFO - 202407-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:30:16 - INFO - 202407-citibike-tripdata_1.csv: cleaned rows = 998907
+2025-11-27 07:30:16 - INFO - Loading ../data/raw/citibike/2024/07/202407-citibike-tripdata_2.csv
+2025-11-27 07:30:19 - INFO - 202407-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:30:19 - INFO - 202407-citibike-tripdata_2.csv: dropped 7027 rows with missing station IDs
+2025-11-27 07:30:19 - INFO - 202407-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:20 - INFO - 202407-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:20 - INFO - 202407-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:30:20 - INFO - 202407-citibike-tripdata_2.csv: cleaned rows = 992973
+2025-11-27 07:30:20 - INFO - Loading ../data/raw/citibike/2024/07/202407-citibike-tripdata_3.csv
+2025-11-27 07:30:22 - INFO - 202407-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:30:22 - INFO - 202407-citibike-tripdata_3.csv: dropped 1073 rows with missing station IDs
+2025-11-27 07:30:23 - INFO - 202407-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:23 - INFO - 202407-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:23 - INFO - 202407-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:30:23 - INFO - 202407-citibike-tripdata_3.csv: cleaned rows = 998927
+2025-11-27 07:30:23 - INFO - Loading ../data/raw/citibike/2024/07/202407-citibike-tripdata_4.csv
+2025-11-27 07:30:25 - INFO - 202407-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:30:25 - INFO - 202407-citibike-tripdata_4.csv: dropped 6877 rows with missing station IDs
+2025-11-27 07:30:26 - INFO - 202407-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:26 - INFO - 202407-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:26 - INFO - 202407-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:30:26 - INFO - 202407-citibike-tripdata_4.csv: cleaned rows = 993123
+2025-11-27 07:30:26 - INFO - Loading ../data/raw/citibike/2024/07/202407-citibike-tripdata_5.csv
+2025-11-27 07:30:27 - INFO - 202407-citibike-tripdata_5.csv: initial rows = 722896
+2025-11-27 07:30:28 - INFO - 202407-citibike-tripdata_5.csv: dropped 676 rows with missing station IDs
+2025-11-27 07:30:28 - INFO - 202407-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:28 - INFO - 202407-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:28 - INFO - 202407-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:30:28 - INFO - 202407-citibike-tripdata_5.csv: cleaned rows = 722220
+2025-11-27 07:30:29 - INFO - 2024-07: no missing values after combining chunks
+2025-11-27 07:30:31 - INFO - Wrote ../data/processed/citibike/2024/07/data.parquet
+2025-11-27 07:30:31 - INFO - Processing month 2024-08
+2025-11-27 07:30:31 - INFO - Loading ../data/raw/citibike/2024/08/202408-citibike-tripdata_1.csv
+2025-11-27 07:30:33 - INFO - 202408-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:30:34 - INFO - 202408-citibike-tripdata_1.csv: dropped 1667 rows with missing station IDs
+2025-11-27 07:30:34 - INFO - 202408-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:34 - INFO - 202408-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:34 - INFO - 202408-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:30:34 - INFO - 202408-citibike-tripdata_1.csv: cleaned rows = 998333
+2025-11-27 07:30:34 - INFO - Loading ../data/raw/citibike/2024/08/202408-citibike-tripdata_2.csv
+2025-11-27 07:30:36 - INFO - 202408-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:30:37 - INFO - 202408-citibike-tripdata_2.csv: dropped 7191 rows with missing station IDs
+2025-11-27 07:30:37 - INFO - 202408-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:37 - INFO - 202408-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:37 - INFO - 202408-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:30:37 - INFO - 202408-citibike-tripdata_2.csv: cleaned rows = 992809
+2025-11-27 07:30:37 - INFO - Loading ../data/raw/citibike/2024/08/202408-citibike-tripdata_3.csv
+2025-11-27 07:30:39 - INFO - 202408-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:30:40 - INFO - 202408-citibike-tripdata_3.csv: dropped 706 rows with missing station IDs
+2025-11-27 07:30:40 - INFO - 202408-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:40 - INFO - 202408-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:40 - INFO - 202408-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:30:40 - INFO - 202408-citibike-tripdata_3.csv: cleaned rows = 999294
+2025-11-27 07:30:40 - INFO - Loading ../data/raw/citibike/2024/08/202408-citibike-tripdata_4.csv
+2025-11-27 07:30:43 - INFO - 202408-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:30:43 - INFO - 202408-citibike-tripdata_4.csv: dropped 7089 rows with missing station IDs
+2025-11-27 07:30:43 - INFO - 202408-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:43 - INFO - 202408-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:44 - INFO - 202408-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:30:44 - INFO - 202408-citibike-tripdata_4.csv: cleaned rows = 992911
+2025-11-27 07:30:44 - INFO - Loading ../data/raw/citibike/2024/08/202408-citibike-tripdata_5.csv
+2025-11-27 07:30:45 - INFO - 202408-citibike-tripdata_5.csv: initial rows = 603575
+2025-11-27 07:30:45 - INFO - 202408-citibike-tripdata_5.csv: dropped 385 rows with missing station IDs
+2025-11-27 07:30:45 - INFO - 202408-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:45 - INFO - 202408-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:45 - INFO - 202408-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:30:45 - INFO - 202408-citibike-tripdata_5.csv: cleaned rows = 603190
+2025-11-27 07:30:46 - INFO - 2024-08: no missing values after combining chunks
+2025-11-27 07:30:48 - INFO - Wrote ../data/processed/citibike/2024/08/data.parquet
+2025-11-27 07:30:48 - INFO - Processing month 2024-09
+2025-11-27 07:30:48 - INFO - Loading ../data/raw/citibike/2024/09/202409-citibike-tripdata_1.csv
+2025-11-27 07:30:50 - INFO - 202409-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:30:51 - INFO - 202409-citibike-tripdata_1.csv: dropped 5769 rows with missing station IDs
+2025-11-27 07:30:51 - INFO - 202409-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:51 - INFO - 202409-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:52 - INFO - 202409-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:30:52 - INFO - 202409-citibike-tripdata_1.csv: cleaned rows = 994231
+2025-11-27 07:30:52 - INFO - Loading ../data/raw/citibike/2024/09/202409-citibike-tripdata_2.csv
+2025-11-27 07:30:54 - INFO - 202409-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:30:54 - INFO - 202409-citibike-tripdata_2.csv: dropped 2230 rows with missing station IDs
+2025-11-27 07:30:55 - INFO - 202409-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:55 - INFO - 202409-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:55 - INFO - 202409-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:30:55 - INFO - 202409-citibike-tripdata_2.csv: cleaned rows = 997770
+2025-11-27 07:30:55 - INFO - Loading ../data/raw/citibike/2024/09/202409-citibike-tripdata_3.csv
+2025-11-27 07:30:57 - INFO - 202409-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:30:57 - INFO - 202409-citibike-tripdata_3.csv: dropped 1050 rows with missing station IDs
+2025-11-27 07:30:58 - INFO - 202409-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:30:58 - INFO - 202409-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:30:58 - INFO - 202409-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:30:58 - INFO - 202409-citibike-tripdata_3.csv: cleaned rows = 998950
+2025-11-27 07:30:58 - INFO - Loading ../data/raw/citibike/2024/09/202409-citibike-tripdata_4.csv
+2025-11-27 07:31:00 - INFO - 202409-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:31:01 - INFO - 202409-citibike-tripdata_4.csv: dropped 766 rows with missing station IDs
+2025-11-27 07:31:01 - INFO - 202409-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:01 - INFO - 202409-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:01 - INFO - 202409-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:31:01 - INFO - 202409-citibike-tripdata_4.csv: cleaned rows = 999234
+2025-11-27 07:31:01 - INFO - Loading ../data/raw/citibike/2024/09/202409-citibike-tripdata_5.csv
+2025-11-27 07:31:03 - INFO - 202409-citibike-tripdata_5.csv: initial rows = 997898
+2025-11-27 07:31:04 - INFO - 202409-citibike-tripdata_5.csv: dropped 8226 rows with missing station IDs
+2025-11-27 07:31:04 - INFO - 202409-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:04 - INFO - 202409-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:04 - INFO - 202409-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:31:04 - INFO - 202409-citibike-tripdata_5.csv: cleaned rows = 989672
+2025-11-27 07:31:05 - INFO - 2024-09: no missing values after combining chunks
+2025-11-27 07:31:07 - INFO - Wrote ../data/processed/citibike/2024/09/data.parquet
+2025-11-27 07:31:07 - INFO - Processing month 2024-10
+2025-11-27 07:31:07 - INFO - Loading ../data/raw/citibike/2024/10/202410-citibike-tripdata_1.csv
+2025-11-27 07:31:09 - INFO - 202410-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:31:10 - INFO - 202410-citibike-tripdata_1.csv: dropped 5665 rows with missing station IDs
+2025-11-27 07:31:10 - INFO - 202410-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:10 - INFO - 202410-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:10 - INFO - 202410-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:31:10 - INFO - 202410-citibike-tripdata_1.csv: cleaned rows = 994335
+2025-11-27 07:31:10 - INFO - Loading ../data/raw/citibike/2024/10/202410-citibike-tripdata_2.csv
+2025-11-27 07:31:12 - INFO - 202410-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:31:13 - INFO - 202410-citibike-tripdata_2.csv: dropped 737 rows with missing station IDs
+2025-11-27 07:31:13 - INFO - 202410-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:13 - INFO - 202410-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:13 - INFO - 202410-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:31:13 - INFO - 202410-citibike-tripdata_2.csv: cleaned rows = 999263
+2025-11-27 07:31:13 - INFO - Loading ../data/raw/citibike/2024/10/202410-citibike-tripdata_3.csv
+2025-11-27 07:31:16 - INFO - 202410-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:31:16 - INFO - 202410-citibike-tripdata_3.csv: dropped 2659 rows with missing station IDs
+2025-11-27 07:31:16 - INFO - 202410-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:16 - INFO - 202410-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:17 - INFO - 202410-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:31:17 - INFO - 202410-citibike-tripdata_3.csv: cleaned rows = 997341
+2025-11-27 07:31:17 - INFO - Loading ../data/raw/citibike/2024/10/202410-citibike-tripdata_4.csv
+2025-11-27 07:31:19 - INFO - 202410-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:31:19 - INFO - 202410-citibike-tripdata_4.csv: dropped 7553 rows with missing station IDs
+2025-11-27 07:31:19 - INFO - 202410-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:20 - INFO - 202410-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:20 - INFO - 202410-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:31:20 - INFO - 202410-citibike-tripdata_4.csv: cleaned rows = 992447
+2025-11-27 07:31:20 - INFO - Loading ../data/raw/citibike/2024/10/202410-citibike-tripdata_5.csv
+2025-11-27 07:31:22 - INFO - 202410-citibike-tripdata_5.csv: initial rows = 1000000
+2025-11-27 07:31:22 - INFO - 202410-citibike-tripdata_5.csv: dropped 2029 rows with missing station IDs
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_5.csv: cleaned rows = 997971
+2025-11-27 07:31:23 - INFO - Loading ../data/raw/citibike/2024/10/202410-citibike-tripdata_6.csv
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_6.csv: initial rows = 150054
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_6.csv: dropped 119 rows with missing station IDs
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_6.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_6.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_6.csv: no missing values after cleaning
+2025-11-27 07:31:23 - INFO - 202410-citibike-tripdata_6.csv: cleaned rows = 149935
+2025-11-27 07:31:24 - INFO - 2024-10: no missing values after combining chunks
+2025-11-27 07:31:26 - INFO - Wrote ../data/processed/citibike/2024/10/data.parquet
+2025-11-27 07:31:26 - INFO - Processing month 2024-11
+2025-11-27 07:31:26 - INFO - Loading ../data/raw/citibike/2024/11/202411-citibike-tripdata_1.csv
+2025-11-27 07:31:28 - INFO - 202411-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:31:29 - INFO - 202411-citibike-tripdata_1.csv: dropped 7602 rows with missing station IDs
+2025-11-27 07:31:29 - INFO - 202411-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:29 - INFO - 202411-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:30 - INFO - 202411-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:31:30 - INFO - 202411-citibike-tripdata_1.csv: cleaned rows = 992398
+2025-11-27 07:31:30 - INFO - Loading ../data/raw/citibike/2024/11/202411-citibike-tripdata_2.csv
+2025-11-27 07:31:32 - INFO - 202411-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:31:32 - INFO - 202411-citibike-tripdata_2.csv: dropped 872 rows with missing station IDs
+2025-11-27 07:31:33 - INFO - 202411-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:33 - INFO - 202411-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:33 - INFO - 202411-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:31:33 - INFO - 202411-citibike-tripdata_2.csv: cleaned rows = 999128
+2025-11-27 07:31:33 - INFO - Loading ../data/raw/citibike/2024/11/202411-citibike-tripdata_3.csv
+2025-11-27 07:31:35 - INFO - 202411-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:31:36 - INFO - 202411-citibike-tripdata_3.csv: dropped 4544 rows with missing station IDs
+2025-11-27 07:31:36 - INFO - 202411-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:36 - INFO - 202411-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:36 - INFO - 202411-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:31:36 - INFO - 202411-citibike-tripdata_3.csv: cleaned rows = 995456
+2025-11-27 07:31:36 - INFO - Loading ../data/raw/citibike/2024/11/202411-citibike-tripdata_4.csv
+2025-11-27 07:31:38 - INFO - 202411-citibike-tripdata_4.csv: initial rows = 710134
+2025-11-27 07:31:38 - INFO - 202411-citibike-tripdata_4.csv: dropped 992 rows with missing station IDs
+2025-11-27 07:31:38 - INFO - 202411-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:38 - INFO - 202411-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:38 - INFO - 202411-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:31:38 - INFO - 202411-citibike-tripdata_4.csv: cleaned rows = 709142
+2025-11-27 07:31:39 - INFO - 2024-11: no missing values after combining chunks
+2025-11-27 07:31:41 - INFO - Wrote ../data/processed/citibike/2024/11/data.parquet
+2025-11-27 07:31:41 - INFO - Processing month 2024-12
+2025-11-27 07:31:41 - INFO - Loading ../data/raw/citibike/2024/12/202412-citibike-tripdata_1.csv
+2025-11-27 07:31:43 - INFO - 202412-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:31:43 - INFO - 202412-citibike-tripdata_1.csv: dropped 3847 rows with missing station IDs
+2025-11-27 07:31:44 - INFO - 202412-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:44 - INFO - 202412-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:44 - INFO - 202412-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:31:44 - INFO - 202412-citibike-tripdata_1.csv: cleaned rows = 996153
+2025-11-27 07:31:44 - INFO - Loading ../data/raw/citibike/2024/12/202412-citibike-tripdata_2.csv
+2025-11-27 07:31:46 - INFO - 202412-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:31:47 - INFO - 202412-citibike-tripdata_2.csv: dropped 4665 rows with missing station IDs
+2025-11-27 07:31:47 - INFO - 202412-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:47 - INFO - 202412-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:47 - INFO - 202412-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:31:47 - INFO - 202412-citibike-tripdata_2.csv: cleaned rows = 995335
+2025-11-27 07:31:47 - INFO - Loading ../data/raw/citibike/2024/12/202412-citibike-tripdata_3.csv
+2025-11-27 07:31:48 - INFO - 202412-citibike-tripdata_3.csv: initial rows = 311171
+2025-11-27 07:31:48 - INFO - 202412-citibike-tripdata_3.csv: dropped 430 rows with missing station IDs
+2025-11-27 07:31:48 - INFO - 202412-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:48 - INFO - 202412-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:48 - INFO - 202412-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:31:48 - INFO - 202412-citibike-tripdata_3.csv: cleaned rows = 310741
+2025-11-27 07:31:48 - INFO - 2024-12: no missing values after combining chunks
+2025-11-27 07:31:50 - INFO - Wrote ../data/processed/citibike/2024/12/data.parquet
+2025-11-27 07:31:50 - INFO - Processing year 2025
+2025-11-27 07:31:50 - INFO - Processing month 2025-01
+2025-11-27 07:31:50 - INFO - Loading ../data/raw/citibike/2025/01/202501-citibike-tripdata_1.csv
+2025-11-27 07:31:52 - INFO - 202501-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:31:53 - INFO - 202501-citibike-tripdata_1.csv: dropped 2685 rows with missing station IDs
+2025-11-27 07:31:53 - INFO - 202501-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:53 - INFO - 202501-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:53 - INFO - 202501-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:31:53 - INFO - 202501-citibike-tripdata_1.csv: cleaned rows = 997315
+2025-11-27 07:31:53 - INFO - Loading ../data/raw/citibike/2025/01/202501-citibike-tripdata_2.csv
+2025-11-27 07:31:55 - INFO - 202501-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:31:56 - INFO - 202501-citibike-tripdata_2.csv: dropped 2514 rows with missing station IDs
+2025-11-27 07:31:56 - INFO - 202501-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:56 - INFO - 202501-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:56 - INFO - 202501-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:31:56 - INFO - 202501-citibike-tripdata_2.csv: cleaned rows = 997486
+2025-11-27 07:31:56 - INFO - Loading ../data/raw/citibike/2025/01/202501-citibike-tripdata_3.csv
+2025-11-27 07:31:57 - INFO - 202501-citibike-tripdata_3.csv: initial rows = 124475
+2025-11-27 07:31:57 - INFO - 202501-citibike-tripdata_3.csv: dropped 166 rows with missing station IDs
+2025-11-27 07:31:57 - INFO - 202501-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:31:57 - INFO - 202501-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:31:57 - INFO - 202501-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:31:57 - INFO - 202501-citibike-tripdata_3.csv: cleaned rows = 124309
+2025-11-27 07:31:57 - INFO - 2025-01: no missing values after combining chunks
+2025-11-27 07:31:58 - INFO - Wrote ../data/processed/citibike/2025/01/data.parquet
+2025-11-27 07:31:58 - INFO - Processing month 2025-02
+2025-11-27 07:31:58 - INFO - Loading ../data/raw/citibike/2025/02/202502-citibike-tripdata_1.csv
+2025-11-27 07:32:00 - INFO - 202502-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:32:01 - INFO - 202502-citibike-tripdata_1.csv: dropped 3095 rows with missing station IDs
+2025-11-27 07:32:01 - INFO - 202502-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:01 - INFO - 202502-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:01 - INFO - 202502-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:32:01 - INFO - 202502-citibike-tripdata_1.csv: cleaned rows = 996905
+2025-11-27 07:32:01 - INFO - Loading ../data/raw/citibike/2025/02/202502-citibike-tripdata_2.csv
+2025-11-27 07:32:04 - INFO - 202502-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:32:04 - INFO - 202502-citibike-tripdata_2.csv: dropped 2391 rows with missing station IDs
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_2.csv: cleaned rows = 997609
+2025-11-27 07:32:05 - INFO - Loading ../data/raw/citibike/2025/02/202502-citibike-tripdata_3.csv
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_3.csv: initial rows = 31257
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_3.csv: dropped 339 rows with missing station IDs
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:32:05 - INFO - 202502-citibike-tripdata_3.csv: cleaned rows = 30918
+2025-11-27 07:32:05 - INFO - 2025-02: no missing values after combining chunks
+2025-11-27 07:32:06 - INFO - Wrote ../data/processed/citibike/2025/02/data.parquet
+2025-11-27 07:32:06 - INFO - Processing month 2025-03
+2025-11-27 07:32:06 - INFO - Loading ../data/raw/citibike/2025/03/202503-citibike-tripdata_1.csv
+2025-11-27 07:32:08 - INFO - 202503-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:32:09 - INFO - 202503-citibike-tripdata_1.csv: dropped 764 rows with missing station IDs
+2025-11-27 07:32:09 - INFO - 202503-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:09 - INFO - 202503-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:09 - INFO - 202503-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:32:09 - INFO - 202503-citibike-tripdata_1.csv: cleaned rows = 999236
+2025-11-27 07:32:09 - INFO - Loading ../data/raw/citibike/2025/03/202503-citibike-tripdata_2.csv
+2025-11-27 07:32:11 - INFO - 202503-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:32:12 - INFO - 202503-citibike-tripdata_2.csv: dropped 8747 rows with missing station IDs
+2025-11-27 07:32:12 - INFO - 202503-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:12 - INFO - 202503-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:13 - INFO - 202503-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:32:13 - INFO - 202503-citibike-tripdata_2.csv: cleaned rows = 991253
+2025-11-27 07:32:13 - INFO - Loading ../data/raw/citibike/2025/03/202503-citibike-tripdata_3.csv
+2025-11-27 07:32:15 - INFO - 202503-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:32:15 - INFO - 202503-citibike-tripdata_3.csv: dropped 603 rows with missing station IDs
+2025-11-27 07:32:15 - INFO - 202503-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_3.csv: cleaned rows = 999397
+2025-11-27 07:32:16 - INFO - Loading ../data/raw/citibike/2025/03/202503-citibike-tripdata_4.csv
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_4.csv: initial rows = 168271
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_4.csv: dropped 111 rows with missing station IDs
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:32:16 - INFO - 202503-citibike-tripdata_4.csv: cleaned rows = 168160
+2025-11-27 07:32:16 - INFO - 2025-03: no missing values after combining chunks
+2025-11-27 07:32:18 - INFO - Wrote ../data/processed/citibike/2025/03/data.parquet
+2025-11-27 07:32:18 - INFO - Processing month 2025-04
+2025-11-27 07:32:18 - INFO - Loading ../data/raw/citibike/2025/04/202504-citibike-tripdata_1.csv
+2025-11-27 07:32:20 - INFO - 202504-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:32:21 - INFO - 202504-citibike-tripdata_1.csv: dropped 4176 rows with missing station IDs
+2025-11-27 07:32:21 - INFO - 202504-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:21 - INFO - 202504-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:21 - INFO - 202504-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:32:21 - INFO - 202504-citibike-tripdata_1.csv: cleaned rows = 995824
+2025-11-27 07:32:21 - INFO - Loading ../data/raw/citibike/2025/04/202504-citibike-tripdata_2.csv
+2025-11-27 07:32:23 - INFO - 202504-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:32:24 - INFO - 202504-citibike-tripdata_2.csv: dropped 1051 rows with missing station IDs
+2025-11-27 07:32:24 - INFO - 202504-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:24 - INFO - 202504-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:24 - INFO - 202504-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:32:24 - INFO - 202504-citibike-tripdata_2.csv: cleaned rows = 998949
+2025-11-27 07:32:24 - INFO - Loading ../data/raw/citibike/2025/04/202504-citibike-tripdata_3.csv
+2025-11-27 07:32:27 - INFO - 202504-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:32:27 - INFO - 202504-citibike-tripdata_3.csv: dropped 5718 rows with missing station IDs
+2025-11-27 07:32:27 - INFO - 202504-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:27 - INFO - 202504-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:28 - INFO - 202504-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:32:28 - INFO - 202504-citibike-tripdata_3.csv: cleaned rows = 994282
+2025-11-27 07:32:28 - INFO - Loading ../data/raw/citibike/2025/04/202504-citibike-tripdata_4.csv
+2025-11-27 07:32:29 - INFO - 202504-citibike-tripdata_4.csv: initial rows = 724596
+2025-11-27 07:32:29 - INFO - 202504-citibike-tripdata_4.csv: dropped 1048 rows with missing station IDs
+2025-11-27 07:32:30 - INFO - 202504-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:30 - INFO - 202504-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:30 - INFO - 202504-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:32:30 - INFO - 202504-citibike-tripdata_4.csv: cleaned rows = 723548
+2025-11-27 07:32:30 - INFO - 2025-04: no missing values after combining chunks
+2025-11-27 07:32:32 - INFO - Wrote ../data/processed/citibike/2025/04/data.parquet
+2025-11-27 07:32:32 - INFO - Processing month 2025-05
+2025-11-27 07:32:32 - INFO - Loading ../data/raw/citibike/2025/05/202505-citibike-tripdata_1.csv
+2025-11-27 07:32:34 - INFO - 202505-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:32:35 - INFO - 202505-citibike-tripdata_1.csv: dropped 5780 rows with missing station IDs
+2025-11-27 07:32:35 - INFO - 202505-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:35 - INFO - 202505-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:35 - INFO - 202505-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:32:35 - INFO - 202505-citibike-tripdata_1.csv: cleaned rows = 994220
+2025-11-27 07:32:35 - INFO - Loading ../data/raw/citibike/2025/05/202505-citibike-tripdata_2.csv
+2025-11-27 07:32:37 - INFO - 202505-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:32:38 - INFO - 202505-citibike-tripdata_2.csv: dropped 1986 rows with missing station IDs
+2025-11-27 07:32:38 - INFO - 202505-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:38 - INFO - 202505-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:38 - INFO - 202505-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:32:38 - INFO - 202505-citibike-tripdata_2.csv: cleaned rows = 998014
+2025-11-27 07:32:38 - INFO - Loading ../data/raw/citibike/2025/05/202505-citibike-tripdata_3.csv
+2025-11-27 07:32:41 - INFO - 202505-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:32:41 - INFO - 202505-citibike-tripdata_3.csv: dropped 6826 rows with missing station IDs
+2025-11-27 07:32:41 - INFO - 202505-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:42 - INFO - 202505-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:42 - INFO - 202505-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:32:42 - INFO - 202505-citibike-tripdata_3.csv: cleaned rows = 993174
+2025-11-27 07:32:42 - INFO - Loading ../data/raw/citibike/2025/05/202505-citibike-tripdata_4.csv
+2025-11-27 07:32:44 - INFO - 202505-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:32:44 - INFO - 202505-citibike-tripdata_4.csv: dropped 814 rows with missing station IDs
+2025-11-27 07:32:45 - INFO - 202505-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:45 - INFO - 202505-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:45 - INFO - 202505-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:32:45 - INFO - 202505-citibike-tripdata_4.csv: cleaned rows = 999186
+2025-11-27 07:32:45 - INFO - Loading ../data/raw/citibike/2025/05/202505-citibike-tripdata_5.csv
+2025-11-27 07:32:45 - INFO - 202505-citibike-tripdata_5.csv: initial rows = 325553
+2025-11-27 07:32:46 - INFO - 202505-citibike-tripdata_5.csv: dropped 346 rows with missing station IDs
+2025-11-27 07:32:46 - INFO - 202505-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:46 - INFO - 202505-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:46 - INFO - 202505-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:32:46 - INFO - 202505-citibike-tripdata_5.csv: cleaned rows = 325207
+2025-11-27 07:32:46 - INFO - 2025-05: no missing values after combining chunks
+2025-11-27 07:32:48 - INFO - Wrote ../data/processed/citibike/2025/05/data.parquet
+2025-11-27 07:32:48 - INFO - Processing month 2025-06
+2025-11-27 07:32:48 - INFO - Loading ../data/raw/citibike/2025/06/202506-citibike-tripdata_1.csv
+2025-11-27 07:32:51 - INFO - 202506-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:32:51 - INFO - 202506-citibike-tripdata_1.csv: dropped 8127 rows with missing station IDs
+2025-11-27 07:32:51 - INFO - 202506-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:51 - INFO - 202506-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:52 - INFO - 202506-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:32:52 - INFO - 202506-citibike-tripdata_1.csv: cleaned rows = 991873
+2025-11-27 07:32:52 - INFO - Loading ../data/raw/citibike/2025/06/202506-citibike-tripdata_2.csv
+2025-11-27 07:32:54 - INFO - 202506-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:32:54 - INFO - 202506-citibike-tripdata_2.csv: dropped 898 rows with missing station IDs
+2025-11-27 07:32:55 - INFO - 202506-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:55 - INFO - 202506-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:55 - INFO - 202506-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:32:55 - INFO - 202506-citibike-tripdata_2.csv: cleaned rows = 999102
+2025-11-27 07:32:55 - INFO - Loading ../data/raw/citibike/2025/06/202506-citibike-tripdata_3.csv
+2025-11-27 07:32:57 - INFO - 202506-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:32:57 - INFO - 202506-citibike-tripdata_3.csv: dropped 1215 rows with missing station IDs
+2025-11-27 07:32:58 - INFO - 202506-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:32:58 - INFO - 202506-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:32:58 - INFO - 202506-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:32:58 - INFO - 202506-citibike-tripdata_3.csv: cleaned rows = 998785
+2025-11-27 07:32:58 - INFO - Loading ../data/raw/citibike/2025/06/202506-citibike-tripdata_4.csv
+2025-11-27 07:33:00 - INFO - 202506-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:33:00 - INFO - 202506-citibike-tripdata_4.csv: dropped 1515 rows with missing station IDs
+2025-11-27 07:33:01 - INFO - 202506-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:01 - INFO - 202506-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:01 - INFO - 202506-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:33:01 - INFO - 202506-citibike-tripdata_4.csv: cleaned rows = 998485
+2025-11-27 07:33:01 - INFO - Loading ../data/raw/citibike/2025/06/202506-citibike-tripdata_5.csv
+2025-11-27 07:33:02 - INFO - 202506-citibike-tripdata_5.csv: initial rows = 759345
+2025-11-27 07:33:03 - INFO - 202506-citibike-tripdata_5.csv: dropped 9635 rows with missing station IDs
+2025-11-27 07:33:03 - INFO - 202506-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:03 - INFO - 202506-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:03 - INFO - 202506-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:33:03 - INFO - 202506-citibike-tripdata_5.csv: cleaned rows = 749710
+2025-11-27 07:33:04 - INFO - 2025-06: no missing values after combining chunks
+2025-11-27 07:33:06 - INFO - Wrote ../data/processed/citibike/2025/06/data.parquet
+2025-11-27 07:33:06 - INFO - Processing month 2025-07
+2025-11-27 07:33:06 - INFO - Loading ../data/raw/citibike/2025/07/202507-citibike-tripdata_1.csv
+2025-11-27 07:33:08 - INFO - 202507-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:33:09 - INFO - 202507-citibike-tripdata_1.csv: dropped 10029 rows with missing station IDs
+2025-11-27 07:33:09 - INFO - 202507-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:09 - INFO - 202507-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:09 - INFO - 202507-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:33:09 - INFO - 202507-citibike-tripdata_1.csv: cleaned rows = 989971
+2025-11-27 07:33:09 - INFO - Loading ../data/raw/citibike/2025/07/202507-citibike-tripdata_2.csv
+2025-11-27 07:33:11 - INFO - 202507-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:33:12 - INFO - 202507-citibike-tripdata_2.csv: dropped 2209 rows with missing station IDs
+2025-11-27 07:33:12 - INFO - 202507-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:12 - INFO - 202507-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:12 - INFO - 202507-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:33:12 - INFO - 202507-citibike-tripdata_2.csv: cleaned rows = 997791
+2025-11-27 07:33:12 - INFO - Loading ../data/raw/citibike/2025/07/202507-citibike-tripdata_3.csv
+2025-11-27 07:33:14 - INFO - 202507-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:33:15 - INFO - 202507-citibike-tripdata_3.csv: dropped 3241 rows with missing station IDs
+2025-11-27 07:33:15 - INFO - 202507-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:15 - INFO - 202507-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:15 - INFO - 202507-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:33:15 - INFO - 202507-citibike-tripdata_3.csv: cleaned rows = 996759
+2025-11-27 07:33:15 - INFO - Loading ../data/raw/citibike/2025/07/202507-citibike-tripdata_4.csv
+2025-11-27 07:33:17 - INFO - 202507-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:33:18 - INFO - 202507-citibike-tripdata_4.csv: dropped 11223 rows with missing station IDs
+2025-11-27 07:33:18 - INFO - 202507-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:18 - INFO - 202507-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:18 - INFO - 202507-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:33:18 - INFO - 202507-citibike-tripdata_4.csv: cleaned rows = 988777
+2025-11-27 07:33:18 - INFO - Loading ../data/raw/citibike/2025/07/202507-citibike-tripdata_5.csv
+2025-11-27 07:33:20 - INFO - 202507-citibike-tripdata_5.csv: initial rows = 988053
+2025-11-27 07:33:21 - INFO - 202507-citibike-tripdata_5.csv: dropped 3021 rows with missing station IDs
+2025-11-27 07:33:21 - INFO - 202507-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:21 - INFO - 202507-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:21 - INFO - 202507-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:33:21 - INFO - 202507-citibike-tripdata_5.csv: cleaned rows = 985032
+2025-11-27 07:33:22 - INFO - 2025-07: no missing values after combining chunks
+2025-11-27 07:33:25 - INFO - Wrote ../data/processed/citibike/2025/07/data.parquet
+2025-11-27 07:33:25 - INFO - Processing month 2025-08
+2025-11-27 07:33:25 - INFO - Loading ../data/raw/citibike/2025/08/202508-citibike-tripdata_1.csv
+2025-11-27 07:33:27 - INFO - 202508-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:33:27 - INFO - 202508-citibike-tripdata_1.csv: dropped 8285 rows with missing station IDs
+2025-11-27 07:33:28 - INFO - 202508-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:28 - INFO - 202508-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:28 - INFO - 202508-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:33:28 - INFO - 202508-citibike-tripdata_1.csv: cleaned rows = 991715
+2025-11-27 07:33:28 - INFO - Loading ../data/raw/citibike/2025/08/202508-citibike-tripdata_2.csv
+2025-11-27 07:33:30 - INFO - 202508-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:33:31 - INFO - 202508-citibike-tripdata_2.csv: dropped 1392 rows with missing station IDs
+2025-11-27 07:33:31 - INFO - 202508-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:31 - INFO - 202508-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:31 - INFO - 202508-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:33:31 - INFO - 202508-citibike-tripdata_2.csv: cleaned rows = 998608
+2025-11-27 07:33:31 - INFO - Loading ../data/raw/citibike/2025/08/202508-citibike-tripdata_3.csv
+2025-11-27 07:33:33 - INFO - 202508-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:33:34 - INFO - 202508-citibike-tripdata_3.csv: dropped 1491 rows with missing station IDs
+2025-11-27 07:33:34 - INFO - 202508-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:34 - INFO - 202508-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:34 - INFO - 202508-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:33:34 - INFO - 202508-citibike-tripdata_3.csv: cleaned rows = 998509
+2025-11-27 07:33:34 - INFO - Loading ../data/raw/citibike/2025/08/202508-citibike-tripdata_4.csv
+2025-11-27 07:33:36 - INFO - 202508-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:33:37 - INFO - 202508-citibike-tripdata_4.csv: dropped 1353 rows with missing station IDs
+2025-11-27 07:33:37 - INFO - 202508-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:37 - INFO - 202508-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:37 - INFO - 202508-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:33:37 - INFO - 202508-citibike-tripdata_4.csv: cleaned rows = 998647
+2025-11-27 07:33:37 - INFO - Loading ../data/raw/citibike/2025/08/202508-citibike-tripdata_5.csv
+2025-11-27 07:33:39 - INFO - 202508-citibike-tripdata_5.csv: initial rows = 1000000
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_5.csv: dropped 8452 rows with missing station IDs
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_5.csv: cleaned rows = 991548
+2025-11-27 07:33:40 - INFO - Loading ../data/raw/citibike/2025/08/202508-citibike-tripdata_6.csv
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_6.csv: initial rows = 121533
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_6.csv: dropped 133 rows with missing station IDs
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_6.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_6.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_6.csv: no missing values after cleaning
+2025-11-27 07:33:40 - INFO - 202508-citibike-tripdata_6.csv: cleaned rows = 121400
+2025-11-27 07:33:41 - INFO - 2025-08: no missing values after combining chunks
+2025-11-27 07:33:44 - INFO - Wrote ../data/processed/citibike/2025/08/data.parquet
+2025-11-27 07:33:44 - INFO - Processing month 2025-09
+2025-11-27 07:33:44 - INFO - Loading ../data/raw/citibike/2025/09/202509-citibike-tripdata_1.csv
+2025-11-27 07:33:46 - INFO - 202509-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:33:46 - INFO - 202509-citibike-tripdata_1.csv: dropped 7900 rows with missing station IDs
+2025-11-27 07:33:47 - INFO - 202509-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:47 - INFO - 202509-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:47 - INFO - 202509-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:33:47 - INFO - 202509-citibike-tripdata_1.csv: cleaned rows = 992100
+2025-11-27 07:33:47 - INFO - Loading ../data/raw/citibike/2025/09/202509-citibike-tripdata_2.csv
+2025-11-27 07:33:49 - INFO - 202509-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:33:50 - INFO - 202509-citibike-tripdata_2.csv: dropped 1276 rows with missing station IDs
+2025-11-27 07:33:50 - INFO - 202509-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:50 - INFO - 202509-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:50 - INFO - 202509-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:33:50 - INFO - 202509-citibike-tripdata_2.csv: cleaned rows = 998724
+2025-11-27 07:33:50 - INFO - Loading ../data/raw/citibike/2025/09/202509-citibike-tripdata_3.csv
+2025-11-27 07:33:52 - INFO - 202509-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:33:53 - INFO - 202509-citibike-tripdata_3.csv: dropped 8333 rows with missing station IDs
+2025-11-27 07:33:53 - INFO - 202509-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:53 - INFO - 202509-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:53 - INFO - 202509-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:33:53 - INFO - 202509-citibike-tripdata_3.csv: cleaned rows = 991667
+2025-11-27 07:33:53 - INFO - Loading ../data/raw/citibike/2025/09/202509-citibike-tripdata_4.csv
+2025-11-27 07:33:55 - INFO - 202509-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:33:56 - INFO - 202509-citibike-tripdata_4.csv: dropped 5677 rows with missing station IDs
+2025-11-27 07:33:56 - INFO - 202509-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:56 - INFO - 202509-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:56 - INFO - 202509-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:33:56 - INFO - 202509-citibike-tripdata_4.csv: cleaned rows = 994323
+2025-11-27 07:33:56 - INFO - Loading ../data/raw/citibike/2025/09/202509-citibike-tripdata_5.csv
+2025-11-27 07:33:58 - INFO - 202509-citibike-tripdata_5.csv: initial rows = 1000000
+2025-11-27 07:33:59 - INFO - 202509-citibike-tripdata_5.csv: dropped 1704 rows with missing station IDs
+2025-11-27 07:33:59 - INFO - 202509-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:33:59 - INFO - 202509-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:33:59 - INFO - 202509-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:33:59 - INFO - 202509-citibike-tripdata_5.csv: cleaned rows = 998296
+2025-11-27 07:33:59 - INFO - Loading ../data/raw/citibike/2025/09/202509-citibike-tripdata_6.csv
+2025-11-27 07:34:00 - INFO - 202509-citibike-tripdata_6.csv: initial rows = 287447
+2025-11-27 07:34:00 - INFO - 202509-citibike-tripdata_6.csv: dropped 1260 rows with missing station IDs
+2025-11-27 07:34:00 - INFO - 202509-citibike-tripdata_6.csv: dropped 0 rows missing start coords
+2025-11-27 07:34:00 - INFO - 202509-citibike-tripdata_6.csv: dropped 0 rows missing end coords
+2025-11-27 07:34:00 - INFO - 202509-citibike-tripdata_6.csv: no missing values after cleaning
+2025-11-27 07:34:00 - INFO - 202509-citibike-tripdata_6.csv: cleaned rows = 286187
+2025-11-27 07:34:01 - INFO - 2025-09: no missing values after combining chunks
+2025-11-27 07:34:03 - INFO - Wrote ../data/processed/citibike/2025/09/data.parquet
+2025-11-27 07:34:03 - INFO - Processing month 2025-10
+2025-11-27 07:34:03 - INFO - Loading ../data/raw/citibike/2025/10/202510-citibike-tripdata_1.csv
+2025-11-27 07:34:05 - INFO - 202510-citibike-tripdata_1.csv: initial rows = 1000000
+2025-11-27 07:34:06 - INFO - 202510-citibike-tripdata_1.csv: dropped 3942 rows with missing station IDs
+2025-11-27 07:34:06 - INFO - 202510-citibike-tripdata_1.csv: dropped 0 rows missing start coords
+2025-11-27 07:34:06 - INFO - 202510-citibike-tripdata_1.csv: dropped 0 rows missing end coords
+2025-11-27 07:34:06 - INFO - 202510-citibike-tripdata_1.csv: no missing values after cleaning
+2025-11-27 07:34:06 - INFO - 202510-citibike-tripdata_1.csv: cleaned rows = 996058
+2025-11-27 07:34:06 - INFO - Loading ../data/raw/citibike/2025/10/202510-citibike-tripdata_2.csv
+2025-11-27 07:34:08 - INFO - 202510-citibike-tripdata_2.csv: initial rows = 1000000
+2025-11-27 07:34:09 - INFO - 202510-citibike-tripdata_2.csv: dropped 6879 rows with missing station IDs
+2025-11-27 07:34:09 - INFO - 202510-citibike-tripdata_2.csv: dropped 0 rows missing start coords
+2025-11-27 07:34:09 - INFO - 202510-citibike-tripdata_2.csv: dropped 0 rows missing end coords
+2025-11-27 07:34:10 - INFO - 202510-citibike-tripdata_2.csv: no missing values after cleaning
+2025-11-27 07:34:10 - INFO - 202510-citibike-tripdata_2.csv: cleaned rows = 993121
+2025-11-27 07:34:10 - INFO - Loading ../data/raw/citibike/2025/10/202510-citibike-tripdata_3.csv
+2025-11-27 07:34:12 - INFO - 202510-citibike-tripdata_3.csv: initial rows = 1000000
+2025-11-27 07:34:12 - INFO - 202510-citibike-tripdata_3.csv: dropped 7311 rows with missing station IDs
+2025-11-27 07:34:13 - INFO - 202510-citibike-tripdata_3.csv: dropped 0 rows missing start coords
+2025-11-27 07:34:13 - INFO - 202510-citibike-tripdata_3.csv: dropped 0 rows missing end coords
+2025-11-27 07:34:13 - INFO - 202510-citibike-tripdata_3.csv: no missing values after cleaning
+2025-11-27 07:34:13 - INFO - 202510-citibike-tripdata_3.csv: cleaned rows = 992689
+2025-11-27 07:34:13 - INFO - Loading ../data/raw/citibike/2025/10/202510-citibike-tripdata_4.csv
+2025-11-27 07:34:15 - INFO - 202510-citibike-tripdata_4.csv: initial rows = 1000000
+2025-11-27 07:34:15 - INFO - 202510-citibike-tripdata_4.csv: dropped 3301 rows with missing station IDs
+2025-11-27 07:34:16 - INFO - 202510-citibike-tripdata_4.csv: dropped 0 rows missing start coords
+2025-11-27 07:34:16 - INFO - 202510-citibike-tripdata_4.csv: dropped 0 rows missing end coords
+2025-11-27 07:34:16 - INFO - 202510-citibike-tripdata_4.csv: no missing values after cleaning
+2025-11-27 07:34:16 - INFO - 202510-citibike-tripdata_4.csv: cleaned rows = 996699
+2025-11-27 07:34:16 - INFO - Loading ../data/raw/citibike/2025/10/202510-citibike-tripdata_5.csv
+2025-11-27 07:34:17 - INFO - 202510-citibike-tripdata_5.csv: initial rows = 731900
+2025-11-27 07:34:18 - INFO - 202510-citibike-tripdata_5.csv: dropped 2591 rows with missing station IDs
+2025-11-27 07:34:18 - INFO - 202510-citibike-tripdata_5.csv: dropped 0 rows missing start coords
+2025-11-27 07:34:18 - INFO - 202510-citibike-tripdata_5.csv: dropped 0 rows missing end coords
+2025-11-27 07:34:18 - INFO - 202510-citibike-tripdata_5.csv: no missing values after cleaning
+2025-11-27 07:34:18 - INFO - 202510-citibike-tripdata_5.csv: cleaned rows = 729309
+2025-11-27 07:34:18 - INFO - 2025-10: no missing values after combining chunks
+2025-11-27 07:34:21 - INFO - Wrote ../data/processed/citibike/2025/10/data.parquet
+2025-11-27 07:34:21 - INFO - ========== Global cleaning summary ==========
+2025-11-27 07:34:21 - INFO - Total rows before cleaning: 119,672,625
+2025-11-27 07:34:21 - INFO - Total rows after cleaning:  119,239,186
+2025-11-27 07:34:21 - INFO - Rows removed:               433,439
+2025-11-27 07:34:21 - INFO - Percentage retained:        99.64%
+2025-11-27 07:34:21 - INFO - Percentage removed:         0.36%
+2025-11-27 07:34:21 - INFO - =============================================
