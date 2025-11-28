@@ -10,7 +10,7 @@ import sys
 # Logging setup
 ###############################################################################
 
-def setup_logger(log_file="./logs/citibike_cleaning.log"):
+def setup_logger(log_file="./src/logs/citibike_cleaning.log"):
     logger = logging.getLogger("citibike_cleaning")
     logger.setLevel(logging.INFO)
 
