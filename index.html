@@ -10,6 +10,22 @@
 
   <!-- Your custom tweaks -->
   <link rel="stylesheet" href="presentation/presentation.css">
+
+  <!-- MathJax 3 configuration (before loading the script) -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script"
+          async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -29,7 +45,6 @@
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
 
 <script>
   Reveal.initialize({
@@ -42,19 +57,11 @@
     minScale: 0.2,
     maxScale: 1.2,
 
-    // Use MathJax 3 instead of KaTeX
-    mathjax3: {
-      mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-      options: {
-        // You can tweak this later; defaults are usually fine
-      }
-    },
-
-    plugins: [ RevealMarkdown, RevealHighlight, RevealMath.MathJax3 ]
+    // Only markdown + highlight; MathJax runs independently
+    plugins: [ RevealMarkdown, RevealHighlight ]
   });
 </script>
 
 </body>
 </html>
-
 
