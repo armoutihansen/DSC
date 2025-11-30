@@ -36,17 +36,18 @@
     hash: true,
     slideNumber: true,
 
-    // Make slides fit better on laptop screens
+    // Make the deck scrollable as a long page
+    view: 'scroll',          // 👈 this is the key
+    scrollProgress: true,
+
     width: 1280,
     height: 720,
     margin: 0.06,
     minScale: 0.2,
     maxScale: 1.2,
-    center: false,   // top-align content; more usable vertical space
+    center: false,
 
-    // Turn on KaTeX-based math support
     katex: {
-      // default config is fine; these delimiters match what you're using
       delimiters: [
         { left: "$$", right: "$$", display: true },
         { left: "$",  right: "$",  display: false },
@@ -58,6 +59,7 @@
     plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
   });
 </script>
+
 
 </body>
 </html>
