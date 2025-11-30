@@ -3,14 +3,20 @@
 <head>
   <meta charset="utf-8">
   <title>CitiBike Presentation</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reset.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/white.min.css">
+
+  <!-- Core reveal.js styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+
+  <!-- Your custom tweaks (font size, scrolling, image size) -->
+  <link rel="stylesheet" href="presentation/presentation.css">
 </head>
 <body>
 
 <div class="reveal">
   <div class="slides">
+    <!-- If slides.md is in root, use "slides.md".
+         If it's inside presentation/, use "presentation/slides.md". -->
     <section data-markdown="slides.md"
              data-separator="---"
              data-separator-vertical="--"
@@ -19,17 +25,40 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/markdown/markdown.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/highlight.min.js"></script>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
 
 <script>
   Reveal.initialize({
     hash: true,
     slideNumber: true,
-    plugins: [ RevealMarkdown, RevealHighlight ]
+
+    // Make slides fit better on laptop screens
+    width: 1280,
+    height: 720,
+    margin: 0.06,
+    minScale: 0.2,
+    maxScale: 1.2,
+    center: false,   // top-align content; more usable vertical space
+
+    // Turn on KaTeX-based math support
+    katex: {
+      // default config is fine; these delimiters match what you're using
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$",  right: "$",  display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ]
+    },
+
+    plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
   });
 </script>
 
 </body>
 </html>
+

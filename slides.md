@@ -1,5 +1,4 @@
-# CitiBike NYC Data Challenge  
-## Usage, Risk, and Opportunities for Insurance
+# CitiBike Data Challenge  
 
 **Jesper Armouti-Hansen**  
 Data Science Case Study
