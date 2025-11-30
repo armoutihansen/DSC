@@ -59,7 +59,7 @@ Data Science Case Study
 - Objective: understand overall **growth, seasonality, and volatility** in demand.
 - Data: daily trip counts across all stations.
 
-<img src="assets/img/daily_citibike_usage.png" width="70%">
+<img src="presentation/assets/img/daily_citibike_usage.png" width="70%">
 
 ---
 
@@ -80,7 +80,7 @@ Data Science Case Study
 - CitiBike fleet includes **classic bikes** and **e-bikes**.
 - Plot: share of rides by bike type.
 
-<img src="assets/img/bike_type_share.png" width="65%">
+<img src="presentation/assets/img/bike_type_share.png" width="65%">
 
 **Takeaways:**
 - E-bikes account for a **substantial and growing share** of trips.
@@ -94,7 +94,7 @@ Data Science Case Study
 
 - CitiBike distinguishes **members** and **casual (one-off) users**.
 
-<img src="assets/img/membership_type_share.png" width="65%">
+<img src="presentation/assets/img/membership_type_share.png" width="65%">
 
 **Implications:**
 - Members generate a large share of trips → **high-value segment**.
@@ -108,7 +108,7 @@ Data Science Case Study
 
 - Compare usage distribution between **weekdays** and **weekends**.
 
-<img src="assets/img/weekday_vs_weekend_share.png" width="70%">
+<img src="presentation/assets/img/weekday_vs_weekend_share.png" width="70%">
 
 **Observations:**
 - Weekdays: commuting & routine trips dominate.
@@ -123,7 +123,7 @@ Data Science Case Study
 
 - How trips distribute across the **24 hours** of the day.
 
-<img src="assets/img/hourly_usage_share.png" width="70%">
+<img src="presentation/assets/img/hourly_usage_share.png" width="70%">
 
 **Insights:**
 - Clear **peak hours** in the morning and evening.
@@ -138,7 +138,7 @@ Data Science Case Study
 
 - Joint distribution of **trip duration** and **approximate distance**.
 
-<img src="assets/img/duration_distance_distribution.png" width="70%">
+<img src="presentation/assets/img/duration_distance_distribution.png" width="70%">
 
 **Interpretation:**
 - Majority of trips are **short in both time and distance**.
@@ -157,7 +157,7 @@ Data Science Case Study
   \text{net\_flow} = \text{arrivals} - \text{departures}
   \]
 
-<img src="assets/img/net_flow_analysis.png" width="70%">
+<img src="presentation/assets/img/net_flow_analysis.png" width="70%">
 
 **Insights:**
 - Most stations fluctuate around **balanced net flow**.
@@ -278,7 +278,7 @@ R^{\text{EB}}_s = \frac{\sum_t H_{s,t}}{\sum_t E_{s,t} + \varepsilon}
 - Stations are then binned into **risk tiers** (e.g., low / medium / high / very high).
 - We visualize them on an interactive **folium map**.
 
-<iframe src="assets/html/station_risk_tiers.html" width="100%" height="520px"></iframe>
+<iframe src="presentation/assets/html/station_risk_tiers.html" width="100%" height="520px"></iframe>
 
 **Interpretation:**
 - Darker / higher tiers indicate **higher expected severity per trip**.
@@ -302,7 +302,7 @@ R^{\text{EB}}_{s,d}
 - This yields a **station × time-of-day** risk surface.
 - We again group estimates into **tiers** for interpretation.
 
-<iframe src="assets/html/station_risk_tiers_by_tod.html" width="100%" height="520px"></iframe>
+<iframe src="presentation/assets/html/station_risk_tiers_by_tod.html" width="100%" height="520px"></iframe>
 
 **Use cases:**
 - Identify stations that are:
@@ -317,7 +317,7 @@ R^{\text{EB}}_{s,d}
 
 We can also look at **system-wide** risk aggregated over all stations by **time of day** (and weekday):
 
-<img src="assets/img/system_temporal_risk.png" width="70%">
+<img src="presentation/assets/img/system_temporal_risk.png" width="70%">
 
 **Reading the plot:**
 - Morning and evening may show **elevated risk**, aligned with commuting peaks.
