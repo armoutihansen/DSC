@@ -42,19 +42,15 @@
     minScale: 0.2,
     maxScale: 1.2,
 
-    // KaTeX config
-    katex: {
-      version: '0.16.9',
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$",  right: "$",  display: false },
-        { left: "\\(", right: "\\)", display: false },
-        { left: "\\[", right: "\\]", display: true }
-      ],
-      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+    // Use MathJax 3 instead of KaTeX
+    mathjax3: {
+      mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+      options: {
+        // You can tweak this later; defaults are usually fine
+      }
     },
 
-    plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+    plugins: [ RevealMarkdown, RevealHighlight, RevealMath.MathJax3 ]
   });
 </script>
 

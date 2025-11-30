@@ -3,11 +3,6 @@
   font-size: 0.9em;
 }
 
-/* Make long slides scroll instead of cutting off content */
-.reveal .slides section {
-  overflow-y: auto;
-}
-
 /* Prevent images from overflowing the viewport */
 .reveal section img {
   max-width: 100%;
