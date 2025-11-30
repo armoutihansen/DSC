@@ -1,4 +1,4 @@
-# Data Science Challenge: CitiBike 2023 - 2025
+# CitiBike NYC: Demand, Risk, and Net Flow (2023–2025)
 
 ## Intro
 

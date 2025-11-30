@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CitiBike NYC: Demand, Risk, and Net Flow Analysis (2023–2025)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Simple styling for a report-like presentation -->
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --fg: #222;
+      --accent: #005ea5;
+      --accent-soft: #e0f0ff;
+      --muted: #666;
+      --card-bg: #ffffff;
+      --border: #ddd;
+      --max-width: 900px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+    }
+    .title-block h1 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    .title-block p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--muted);
+      padding-bottom: 0.2rem;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent-soft);
+    }
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      border: 1px solid #eee;
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      margin-top: 1.4rem;
+      font-size: 1.1rem;
+    }
+    h4 {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    p {
+      margin-top: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+    ul {
+      margin-top: 0.4rem;
+      padding-left: 1.3rem;
+    }
+    li {
+      margin-bottom: 0.3rem;
+    }
+    .callout {
+      border-left: 3px solid var(--accent);
+      padding-left: 0.8rem;
+      margin: 0.8rem 0;
+      background: var(--accent-soft);
+      border-radius: 4px;
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+    }
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .figure {
+      margin: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .figure img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.85rem;
+      background: #f0f0f5;
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+    }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: #fafafa;
+    }
+    @media (max-width: 600px) {
+      nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+    }
+  </style>
+
+  <!-- MathJax 3 configuration for LaTeX support -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="title-block">
+      <h1>CitiBike NYC: Demand, Risk, and Net Flow (2023–2025)</h1>
+      <p class="tagline">Exploring how CitiBike usage and crash risk data can create value for CitiBike and an insurance partner.</p>
+    </div>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#data-analysis">Data Analysis</a>
+      <a href="#risk-analysis">Risk Analysis</a>
+      <a href="#net-flow">Net Flow Prediction</a>
+      <a href="#conclusion">Conclusion</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. Overview -->
+<section id="overview">
+  <h2>1. Overview</h2>
+
+  <h3>1.1 Background</h3>
+  <p>
+    CitiBike is New York City’s largest bikeshare system, used for millions of short trips each month.
+    Despite its scale and role as public-transport substitute, riders currently receive
+    <strong>no accident or liability insurance</strong>. Use of the system requires accepting a
+    broad <strong><a href="https://assets.citibikenyc.com/liability-waiver.html">liability waiver</a></strong>, meaning riders effectively <em>self-insure</em>
+    against injury, medical costs, third-party liability, and damage to the bike.
+  </p>
+
+  <p>
+    CitiBike itself is also not fully insulated: waivers do <strong>not</strong> cover incidents involving
+    maintenance issues, equipment failure, or negligence. This leaves residual legal exposure,
+    reputational risk, and potential settlement pressure.
+  </p>
+
+  <p>
+    Other micromobility providers have taken a different approach. For example, Lime partnered with Allianz
+    to provide <strong><a href="https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/press/document/Allianz-Lime-micromobility-partnership_EN.pdf">automatic accident and liability insurance</a></strong> for riders, reporting improved
+    trust, safety perception, and adoption. A similar model may be feasible for CitiBike—but requires
+    high-resolution, data-driven understanding of when and where risk occurs.
+  </p>
+
+  <div class="callout">
+    <strong>Key idea:</strong>
+    We combine CitiBike trip data with NYPD crash data to construct a transparent,
+    interpretable <strong>risk per trip</strong> measure—by station, time of day, and their interaction.
+    This enables user communication, pricing of potential insurance products, and targeted safety interventions.
+  </div>
+
+  <h3>1.2 Data &amp; Time Frame</h3>
+  <ul>
+    <li><strong>CitiBike trip data:</strong> January 2023 – October 2025 (station, timestamps, bike type, user type, start and end location).</li>
+    <li><strong>NYPD collision data:</strong> detailed crash records including severity, injuries, fatalities, and location.</li>
+  </ul>
+
+  <h3>1.3 Structure</h3>
+  <ul>
+    <li><strong>Section 2:</strong> How CitiBike is used (demand, net flow, usage patterns).</li>
+    <li><strong>Section 3:</strong> Construction and interpretation of the risk measure.</li>
+    <li><strong>Section 4:</strong> Predicting net flow imbalances to support rebalancing operations.</li>
+    <li><strong>Section 5:</strong> Strategic implications for CitiBike and a potential insurance partner.</li>
+  </ul>
+
+<h3>1.4 Key Findings</h3>
+
+<div class="callout">
+  <ul>
+
+    <!-- SECTION 2 -->
+    <li><strong>Section 2 — Data Analysis</strong>
+      <ul>
+        <li><strong>Demand & maturity:</strong> Strong seasonal peaks; growth from 2023→2024 but clear stagnation in 2025 → CitiBike has entered a mature phase.</li>
+        <li><strong>Usage structure:</strong> Extremely stable weekday/weekend split and hourly commuter peaks; trips remain short (10–20 min, 1–2 km).</li>
+        <li><strong>Imbalance:</strong> A small set of stations act as persistent sources/sinks and drive most rebalancing needs.</li>
+        <li><strong>Operational timing:</strong> Weekends (especially Sundays) are best for major rebalancing and repairs; daily rebalancing is most effective before/after the AM/PM peaks, and repairs fit best overnight.</li>
+        <li><strong>Actionable insights:</strong> Prioritize e-bike availability at peak times; target winter-demand stimulation; focus rebalancing on the structural source/sink stations.</li>
+      </ul>
+    </li>
+
+    <!-- SECTION 3 -->
+    <li><strong>Section 3 — Risk Analysis</strong>
+      <ul>
+        <li><strong>Spatial risk:</strong> Most stations are low-risk, but a small number form persistent medium- or high-risk clusters (e.g., key arterials, complex intersections, poorly protected corridors).</li>
+        <li><strong>Temporal risk:</strong> Time-of-day dominates weekday differences: late evening and night show 2×–5× higher risk than daytime; weekday patterns are nearly identical.</li>
+        <li><strong>Station × time-of-day:</strong> Some stations that are safe at midday become high-risk at night → aggregate station averages conceal meaningful temporal spikes.</li>
+        <li><strong>Actionable insights:</strong> Warn riders at high-risk stations/times; use station×time risk for insurance pricing; target nighttime hotspots for advocacy and safety improvements.</li>
+      </ul>
+    </li>
+
+    <!-- SECTION 4 -->
+    <li><strong>Section 4 — Net Flow Prediction</strong>
+      <ul>
+        <li><strong>Imbalance patterns:</strong> Most stations are balanced, but extreme imbalances are predictable and recur at the same locations.</li>
+        <li><strong>Prediction approach:</strong> Classify stations into under-supply / balanced / over-supply using lagged net flow, calendar structure, and spatial features.</li>
+        <li><strong>Actionable insights:</strong> Enable proactive rebalancing before stations empty/fill, reducing service failures and operational costs.</li>
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+</section>
+
+
+
+  <!-- 2. Data Analysis -->
+<section id="data-analysis">
+  <h2>2. Data Analysis: CitiBike (2023–2025)</h2>
+
+  <p>
+    This section summarizes CitiBike demand based strictly on the exploratory data analysis.
+    The analysis investigates:
+    (i) overall daily demand, (ii) net flow and structural imbalances,
+    (iii) usage patterns across bike type, membership, weekday/weekend, and hour of day,
+    and (iv) trip duration and distance distributions.
+  </p>
+
+  <!-- 2.1 Demand -->
+  <h3>2.1 Demand & System Maturity</h3>
+
+  <div class="figure">
+    <img src="src/figures/daily_citibike_usage.png">
+    <em>[Figure: Daily usage and average daily demand per station (30-day rolling mean)]</em>
+  </div>
+
+  <ul>
+    <li><strong>Daily usage shows strong seasonal variation</strong>, with high ridership every summer and clear slowdowns in winter.</li>
+
+    <li><strong>Demand increases from 2023 → 2024</strong>, but the increase from 2024 → 2025 is much smaller, indicating a clear <strong>slowdown in growth</strong>.</li>
+
+    <li>Peak summer levels in 2025 are only slightly above 2024, and winter troughs nearly overlap → <strong>growth stagnation</strong>.</li>
+
+    <li><strong>Per-station usage</strong> (bottom panel) shows the same seasonal pattern and similarly minimal growth from 2024 → 2025.</li>
+  </ul>
+
+  <p><strong>Actionable insights (from the notebook):</strong></p>
+  <ul>
+    <li><strong>Winter demand stimulation:</strong> promotional campaigns, discounted rides, or seasonal memberships.</li>
+    <li><strong>Acquire non-users:</strong> insurance partnerships can reduce perceived safety risks and help expand the user base.</li>
+  </ul>
+
+  <!-- 2.2 Net flow -->
+  <h3>2.2 Net Flow & Imbalance</h3>
+
+  <p>
+    Net flow for station \(j\) and day \(t\) is defined as:
+  </p>
+  <p>
+    \[
+      \text{NetFlow}_{j,t} = A_{j,t} - D_{j,t},
+    \]
+  </p>
+
+  <div class="figure">
+    <img src="src/figures/net_flow_analysis.png">
+    <em>[Figure: System-wide average absolute net flow + top persistent source/sink stations]</em>
+  </div>
+
+  <ul>
+    <li>The <strong>system-wide average absolute net flow</strong> rises above 5 bikes/station in summer and falls below ~3.5 bikes/station in winter.</li>
+
+    <li>This seasonal imbalance pattern is <strong>highly consistent</strong> across 2023, 2024, and 2025.</li>
+
+    <li><strong>Short-term imbalance spikes</strong> occur due to weather events, usage surges, or outages.</li>
+    <li>A small set of stations exhibit <strong>large persistent net losses or gains</strong> (20–30 bikes/day). These stations form structural sources and sinks.</li>
+  </ul>
+
+  <p><strong>Actionable insights (from the notebook):</strong></p>
+  <ul>
+    <li><strong>Net flow prediction is needed:</strong> persistent, predictable imbalances warrant a model.</li>
+    <li><strong>Use forecasts for targeted redistribution</strong> to prevent empty or full stations.</li>
+  </ul>
+
+  <!-- 2.3 Usage patterns -->
+  <h3>2.3 Usage Patterns: Who, When, and How People Ride</h3>
+
+
+  <!-- Bike type -->
+  <h4>Bike Type</h4>
+   <div class="figure">
+    <img src="src/figures/bike_type_share.png">
+    <em>[Figure: Bike type shares]</em>
+  </div>
+  <ul>
+    <li><strong>E-bike usage increases steadily</strong> from 2023 to 2025, but the rate of increase is slowing.</li>
+
+    <li>Classic bike usage remains stable → a consistent baseline user group.</li>
+
+    <li>The composition is stable across seasons → users do not switch bike types systematically in winter.</li>
+  </ul>
+
+  <!-- Membership -->
+  <h4>Membership vs Casual</h4>
+   <div class="figure">
+    <img src="src/figures/membership_type_share.png">
+    <em>[Figure: Membership shares]</em>
+  </div>
+  <ul>
+    <li>Members consistently account for the majority of trips; casual use rises sharply in summer (22–24%) and drops in winter (10–12%).</li>
+
+    <li>The member–casual ratio shows <strong>no year-to-year change</strong> → composition is structurally stable.</li>
+  </ul>
+
+  <p><strong>Actionable insight:</strong></p>
+  <ul>
+    <li><strong>Convert casual users to members:</strong> members ride more consistently in winter → targeted winter promotions may increase low-season demand. </li>
+  </ul>
+
+  <!-- Weekday -->
+  <h4>Usage by Weekday</h4>
+   <div class="figure">
+    <img src="src/figures/weekday_vs_weekend_share.png">
+    <em>[Figure: Weekday vs Weekend usage]</em>
+  </div>
+  <ul>
+    <li>Weekday usage strongly exceeds weekend usage → demand is primarily commuter-driven.</li>
+
+    <li>The weekday/weekend split is stable over time.</li>
+  </ul>
+
+  <!-- Hour of Day -->
+  <h4>Usage by Hour</h4>
+   <div class="figure">
+    <img src="src/figures/hourly_usage_share.png">
+    <em>[Figure: Hourly usage]</em>
+  </div>
+  <ul>
+    <li>Clear commuting peaks: morning (7–10) and evening (17–19). </li>
+
+    <li>Seasonal variation in evening and nighttime share is modest. </li>
+    <li>Hourly usage patterns are <strong>stable</strong> across years. </li>
+  </ul>
+
+  <p><strong>Actionable insights:</strong></p>
+  <ul>
+    <li><strong>Prioritize peak-hour availability:</strong> 
+      ensure bikes in residential areas in the morning and docks in business areas in the evening. 
+    </li>
+
+    <li><strong>Use overnight hours for maintenance:</strong> very low demand makes this the ideal repair window. </li>
+
+    <li><strong>Stable hourly patterns enable precise rebalancing schedules.</strong> </li>
+  </ul>
+
+  <!-- Duration & distance -->
+  <h4>Trip Duration & Distance</h4>
+   <div class="figure">
+    <img src="src/figures/duration_distance_distribution.png">
+    <em>[Figure: Trip duration and distance]</em>
+  </div>
+  <ul>
+    <li>Trip durations and distances are tightly concentrated → short urban trips dominate.</li>
+
+    <li>This pattern supports risk quantification and insights into optimal fleet composition. </li>
+  </ul>
+
+  <!-- Summary -->
+  <h3>2.4 Summary</h3>
+  <div class="callout">
+  <ul>
+    <li>CitiBike demand is strongly seasonal and growth has slowed since 2024.</li>
+    <li>Net flow imbalances are structural and predictable, concentrated in a small set of stations.</li>
+    <li>Usage patterns (bike type, membership, weekday/weekend, hourly) are stable across years.</li>
+    <li>Trips are short and consistent in duration and distance.</li>
+    <li>These regularities support risk estimation (Section 3) and net-flow prediction (Section 4).</li>
+  </ul>
+  </div>
+</section>
+
+
+
+  <!-- 3. Risk Analysis -->
+<section id="risk-analysis">
+  <h2>3. Risk Analysis</h2>
+
+  <p>
+    We combine CitiBike trips with NYPD collision data to estimate an 
+    <strong>exposure-adjusted, Empirical-Bayes–smoothed risk per trip</strong> 
+    by station, time of day, and station × time-of-day.
+  </p>
+
+  <h3>3.1 Assigning Crashes to Stations</h3>
+  <p>
+    Crashes are assigned to the <em>nearest</em> station using a BallTree with
+    Haversine distance, subject to a strict <strong>300 m cutoff</strong> so that only
+    crashes plausibly related to CitiBike trips are included.
+  </p>
+
+  <h3>3.2 Risk per Trip</h3>
+  <p>
+    For station \(j\) and time bucket \(b\):
+  </p>
+  <ul>
+    <li><strong>Hazard</strong> \(H_{j,b}\): sum of crash severities (\(S_{i,b}\)) near the station</li>
+    <li><strong>Exposure</strong> \(E_{j,b}\): number of CitiBike departures</li>
+  </ul>
+  <p>
+    Raw risk:
+    \[
+      R_{j,b} = \frac{H_{j,b}}{E_{j,b} + \epsilon}.
+    \]
+    To stabilize noisy ratios, the notebook applies <strong>Empirical Bayes smoothing</strong>:
+  </p>
+  <p>
+    \[
+      R_{j,b}^{\mathrm{EB}}
+      = \lambda_{j,b} R_{j,b} + (1 - \lambda_{j,b}) \mu,
+      \qquad
+      \lambda_{j,b} = \frac{E_{j,b}}{E_{j,b} + C},
+    \]
+  </p>
+ where \(\mu\) is a global mean risk (or a time-of-day specific mean); \(C\) is a credibility constant
+ that controls the strength of shrinkage toward the mean.
+  <h3>3.3 Crash Severity</h3>
+  <p>
+    Crash severity \(S_i\) weights injuries and fatalities heavily, and assigns much
+    higher severity to cyclist-involved crashes. The specification ensures that:
+  </p>
+  <ul>
+    <li>non-cyclist crashes still contribute to hazard,</li>
+    <li>cyclist crashes are strongly up-weighted,</li>
+    <li>injuries and fatalities dominate the severity score.</li>
+  </ul>
+
+  <h3>3.4 Station-Level Risk</h3>
+  <p>
+    Hazard and exposure are aggregated to obtain EB-smoothed station-level risk:
+    \[
+      R_j^{\mathrm{EB}}
+      = \lambda_j R_j + (1-\lambda_j)\mu.
+    \]
+  </p>
+
+<div class="figure">
+  <iframe src="src/figures/station_risk_tiers.html"
+          width="100%"
+          height="600px"
+          style="border:none;">
+  </iframe>
+  <em>[Figure: Station-level EB risk map]</em>
+</div>
+
+  <p><strong>Key findings from the notebook:</strong></p>
+  <ul>
+    <li>Most stations have <strong>very low per-trip risk</strong>.</li>
+    <li>A small set of stations exhibit <strong>high or very high risk</strong>, driven by
+        repeated cyclist crashes, injuries/fatalities, or low exposure.</li>
+    <li>High- and very high-risk clusters concentrated especially in:
+      <ul>
+        <li>Southwest Brooklyn,</li>
+        <li>Williamsburg/Greenpoint waterfront,</li>
+        <li>Long Island City.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>3.5 Time-of-Day & Weekday Risk</h3>
+
+  <div class="figure">
+ <img src="src/figures/system_temporal_risk.png">
+    <em>[Figure: EB risk by time of day]</em>
+  </div>
+
+  <p><strong>Findings:</strong></p>
+  <ul>
+    <li><strong>Time of day dominates risk.</strong></li>
+    <li>Morning, midday, and early evening have <strong>similarly low risk</strong>.</li>
+    <li><strong>Late evening ≈ 2× midday risk.</strong></li>
+    <li><strong>Night (20:00–05:00) = 4–5× daytime risk</strong> — the largest single effect.</li>
+    <li>Weekday differences are minimal; weekends slightly higher.</li>
+  </ul>
+
+  <p><strong>Interpretation:</strong>  
+    System-wide risk is <em>not commuter-driven</em>; it is strongly shaped by 
+    <strong>visibility and nighttime traffic conditions</strong>.
+  </p>
+
+  <h3>3.6 Station x Time-of-Day Risk</h3>
+
+  <div class="figure">
+  <iframe src="src/figures/station_risk_tiers_by_tod.html"
+          width="100%"
+          height="600px"
+          style="border:none;">
+  </iframe>
+  <em>[Figure: Station x time-of-day risk grid]</em>
+</div>
+
+
+  <p><strong>Findings:</strong></p>
+  <ul>
+    <li>Many stations are <strong>safe during the day but high-risk at night</strong>.</li>
+    <li>Some stations have <strong>evening-specific spikes</strong> linked to commuting patterns.</li>
+    <li>A small subset remains <strong>high-risk at all times</strong>, consistent with structural design issues.</li>
+  </ul>
+
+  <h3>3.7 Use for CitiBike & Insurers</h3>
+  <ul>
+    <li><strong>User safety alerts:</strong> highlight high-risk stations and nighttime conditions.</li>
+    <li><strong>Insurance pricing:</strong> use \(R_{j,b}^{\mathrm{EB}}\) or \(R_{j,t}^{\mathrm{EB}}\) for risk-based premiums.</li>
+    <li><strong>Operational targeting:</strong> identify night-time or location-specific safety improvement opportunities.</li>
+    <li><strong>Portfolio management:</strong> isolate high-severity, low-frequency pockets for special attention.</li>
+  </ul>
+
+</section>
+
+
+
+
+  <!-- 4. Net Flow Prediction -->
+<section id="net-flow">
+  <h2>4. Net Flow Prediction</h2>
+
+  <p>
+    Net flow drives rebalancing needs. For station \(j\) and day \(t\):
+  </p>
+  <p>\[
+    \text{NetFlow}_{j,t} = A_{j,t} - D_{j,t},
+  \]</p>
+  <p>
+    where negative values indicate stations that tend to empty, positive values stations that tend to fill.
+  </p>
+
+  <h3>4.1 From Distribution to Prediction Target</h3>
+  <div class="figure">
+    <img src="src/figures/net_flow_distribution.png">
+    <em>[Figure: Distribution of station-day net flows]</em>
+  </div>
+  <ul>
+    <li>Most station-days lie near zero (balanced).</li>
+    <li>Operational concern is in the tails: large negative/positive imbalances.</li>
+    <li>Source–sink patterns are persistent and seasonal ⇒ structurally predictable.</li>
+  </ul>
+  <p>
+    We therefore predict <em>imbalance classes</em> rather than exact net flow values.
+  </p>
+
+  <h3>4.2 Ternary Imbalance Classification</h3>
+  <p>
+    For each station-day \((j,t)\), define:
+  </p>
+  <p>\[
+    y_{j,t} =
+    \begin{cases}
+      -1, & \text{if } \text{NetFlow}_{j,t} < -5, \\
+       0, & \text{if } |\text{NetFlow}_{j,t}| \le 5, \\
+       +1, & \text{if } \text{NetFlow}_{j,t} > 5.
+    \end{cases}
+  \]</p>
+  <ul>
+    <li>\(-1\): likely under-supply (emptying station),</li>
+    <li>\(0\): balanced,</li>
+    <li>\(+1\): likely over-supply (filling station).</li>
+  </ul>
+
+  <h3>4.3 Features & Model</h3>
+  <p>
+    For each station-day, we use:
+  </p>
+  <ul>
+    <li><strong>Net flow history:</strong> lag-1, lag-7, short rolling mean.</li>
+    <li><strong>Calendar:</strong> weekday/weekend, month.</li>
+    <li><strong>Station:</strong> latitude, longitude.</li>
+    <li><strong>Lagged weather:</strong> yesterday’s temperature, rain, snow (observable at prediction time).</li>
+  </ul>
+  <p>
+    We treat \(y_{j,t} \in \{-1,0,+1\}\) as a supervised classification problem, using tree-based models
+    (e.g. gradient-boosted trees) with class weighting or macro F1 to ensure the under-/over-supply classes matter.
+  </p>
+
+  <h3>4.4 Operational Value</h3>
+  <ul>
+    <li><strong>Proactive rebalancing:</strong> flag tomorrow’s problematic stations and plan routes and staffing.</li>
+    <li><strong>Fewer outages:</strong> reduce empty/full stations and associated lost rides.</li>
+    <li><strong>Cost efficiency:</strong> focus redistribution efforts where imbalances are predicted, not just observed.</li>
+  </ul>
+</section>
+
+
+
+  <!-- 5. Conclusion -->
+<section id="conclusion">
+  <h2>5. Conclusion &amp; Strategic Takeaways</h2>
+
+  <h3>5.1 Main Findings</h3>
+  <ul>
+    <li><strong>Mature but seasonal demand:</strong> strong, repeatable summer peaks and winter troughs; clear stagnation in per-station growth after 2024.</li>
+    <li><strong>Highly structured usage:</strong> stable weekday dominance, time-of-day commuter peaks, and short trip lengths.</li>
+    <li><strong>Structural net-flow imbalance:</strong> a small set of persistent source/sink stations drive most rebalancing needs.</li>
+    <li><strong>Granular crash risk:</strong> most stations are low-risk, but a small number form medium-very-high-risk clusters; risk is 2x-5x higher at night.</li>
+    <li><strong>Predictability:</strong> both risk and imbalance have strong, stable spatial and temporal structure, enabling reliable forecasting and targeted interventions.</li>
+  </ul>
+
+  <h3>5.2 Proposed Actions</h3>
+  <ul>
+    <li><strong>Implement a CitiBike ride-insurance offering:</strong> leverage the risk-per-trip measure to design per-ride or membership-based insurance that reduces perceived personal and third-party risk, helping attract risk-averse non-users and increase overall demand.</li>
+
+    <li><strong>Stimulate winter demand:</strong> use seasonal pricing, promotions, or member campaigns to lift structurally low winter ridership.</li>
+
+    <li><strong>Prioritize rebalancing on structural source/sink stations:</strong> concentrate redistribution where persistent extreme net flows occur.</li>
+
+    <li><strong>Exploit temporal structure for operations:</strong> schedule major rebalancing and repairs on weekends (especially Sundays), and use overnight hours for maintenance when demand is minimal.</li>
+
+    <li><strong>Targeted safety communication:</strong> provide simple in-app warnings for high-risk stations and nighttime periods.</li>
+
+    <li><strong>Use risk tiers in pricing and planning:</strong> incorporate station x time-of-day risk levels into operational decisions and product design.</li>
+  </ul>
+
+  <h3>5.3 Value for CitiBike</h3>
+  <ul>
+    <li><strong>Higher demand and user acquisition:</strong> insurance reduces perceived risk and can convert hesitant non-users, benefiting a maturing system with slowed natural growth.</li>
+    <li><strong>Greater service reliability:</strong> net-flow predictions allow proactive rebalancing and fewer empty/full stations.</li>
+    <li><strong>More efficient operations:</strong> stable temporal patterns support smarter scheduling of rebalancing, repairs, and routing.</li>
+    <li><strong>Data-driven safety management:</strong> station- and time-specific risk tiers highlight where interventions or advocacy can be most effective.</li>
+  </ul>
+
+  <h3>5.4 Value for an Insurance Partner</h3>
+  <ul>
+    <li><strong>Granular, interpretable rating factors:</strong> EB-smoothed risk-per-trip measures by station and time-of-day support fair, data-driven pricing.</li>
+    <li><strong>Portfolio insight and segmentation:</strong> clear identification of low-risk areas versus concentrated high-risk pockets.</li>
+    <li><strong>Focused mitigation opportunities:</strong> nighttime and hotspot risks offer concrete entry points for joint safety initiatives that improve long-run loss performance.</li>
+  </ul>
+
+  <h3>5.5 Next Steps</h3>
+  <ul>
+    <li><strong>Refine the risk measure</strong> (severity weights, exposure definitions, potential covariates).</li>
+    <li><strong>Co-develop an insurance prototype</strong> (pricing concepts, coverage design, simple user-facing interface).</li>
+    <li><strong>Build an interactive dashboard</strong> for jointly exploring demand, risk, and imbalance predictions.</li>
+  </ul>
+</section>
+
+
+
+</main>
+
+</body>
+</html>
