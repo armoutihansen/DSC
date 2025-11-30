@@ -16,6 +16,21 @@ Data Science Case Study
 *(Today’s focus: 2 & 3. Sections 1, 4, and 5 are still evolving.)*
 
 ---
+# Math test
+
+Inline: $R^{\text{raw}}_{s,t} = \frac{H_{s,t}}{E_{s,t} + \varepsilon}$
+
+Block:
+
+$$
+\text{severity}_i = w_1 \cdot \text{cyclists\_injured}_i
++ w_2 \cdot \text{cyclists\_killed}_i
++ w_3 \cdot \text{others\_injured}_i
++ w_4 \cdot \text{others\_killed}_i
+$$
+
+
+---
 
 # 1. CitiBike Overview
 

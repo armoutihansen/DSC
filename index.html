@@ -8,18 +8,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
 
-  <!-- Your custom tweaks (font size, scrolling, image size) -->
+  <!-- Your custom tweaks -->
   <link rel="stylesheet" href="presentation/presentation.css">
 </head>
 <body>
 
 <div class="reveal">
   <div class="slides">
-    <!-- If slides.md is in root, use "slides.md".
-         If it's inside presentation/, use "presentation/slides.md". -->
+    <!-- If slides.md is in the repo root, this is correct.
+         If it's in /presentation, change to "presentation/slides.md". -->
     <section data-markdown="slides.md"
-             data-separator="---"
-             data-separator-vertical="--"
+             data-separator="^---$"
+             data-separator-vertical="^--$"
              data-separator-notes="^Note:">
     </section>
   </div>
@@ -35,32 +35,30 @@
   Reveal.initialize({
     hash: true,
     slideNumber: true,
-
-    // Make the deck scrollable as a long page
-    view: 'scroll',          // 👈 this is the key
-    scrollProgress: true,
-
+    center: false,      // more vertical space
     width: 1280,
     height: 720,
     margin: 0.06,
     minScale: 0.2,
     maxScale: 1.2,
-    center: false,
 
+    // KaTeX config
     katex: {
+      version: '0.16.9',
       delimiters: [
         { left: "$$", right: "$$", display: true },
         { left: "$",  right: "$",  display: false },
         { left: "\\(", right: "\\)", display: false },
         { left: "\\[", right: "\\]", display: true }
-      ]
+      ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
     },
 
     plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
   });
 </script>
 
-
 </body>
 </html>
+
 
