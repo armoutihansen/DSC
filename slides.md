@@ -277,7 +277,7 @@ R^{\text{EB}}_s = \frac{\sum_t H_{s,t}}{\sum_t E_{s,t} + \varepsilon}
 - Stations are then binned into **risk tiers** (e.g., low / medium / high / very high).
 - We visualize them on an interactive **folium map**.
 
-<iframe data-src="presentation/assets/img/station_risk_tiers.html" width="100%" height="520px"></iframe>
+<iframe data-src="https://armoutihansen.xyz/DSC/presentation/assets/img/station_risk_tiers.html" width="100%" height="520px"></iframe>
 
 **Interpretation:**
 - Darker / higher tiers indicate **higher expected severity per trip**.
