@@ -1,13 +1,10 @@
-/data
-*.parquet
+/data/raw/*
+/data/processed/citibike/
+/data/Motor_Vehicle_Collisions_-_Crashes_20251117.csv
+/data/MVCollisionsDataDictionary_20190813_ERD.xlsx
 *.ipynb_checkpoints
 __pycache__/
 .env
 .vscode/
 .DS_Store
 .conda/
-24_09-Data_Science_Challenge.pdf
-notebooks/catboost_info
-notebooks/.env
-src/models/*
-catboost_info
