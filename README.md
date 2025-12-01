@@ -7,16 +7,15 @@ The results support **user warnings**, **insurance pricing**, and **operational 
 
 ---
 
-## Repository Structure (Short)
+## Repository Structure
 
 - **index.html** — report with all figures and analysis.
 - **notebooks/**
   - `clean_citibike.ipynb` — example workflow for cleaning CitiBike data.
   - `clean_collision_data.ipynb` — cleaning + cyclist-involvement parsing for NYPD crash data.
   - `EDA_citibike.ipynb`- data analysis of CitiBike data.
-  - `risk_analysis.ipynb`- Risk analysis.
-  - `net_flow_analysis.ipynb`- Net flow prediction.
-  - additional EDA, risk, and prediction notebooks (demand, net flow, EB smoothing, etc.).
+  - `risk_analysis.ipynb`- risk analysis.
+  - `net_flow_analysis.ipynb`- net flow prediction.
 - **src/**
   - `download_citibike.py`- helper script to download all CitiBike data.
   - `clean_citibike_csv.py`- helper script that cleans all CitiBike CSVs and export them as parquet.
@@ -29,8 +28,8 @@ The results support **user warnings**, **insurance pricing**, and **operational 
 
 ## Data Sources
 
-- [**CitiBike System Data:**](https://s3.amazonaws.com/tripdata/index.html)
-- [**NYPD Collision Data:**](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data)
+- [**CitiBike Trip Data**](https://s3.amazonaws.com/tripdata/index.html)
+- [**NYPD Collision Data**](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data)
 
 ---
 
