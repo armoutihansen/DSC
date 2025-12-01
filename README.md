@@ -21,6 +21,8 @@ The results support **user warnings**, **insurance pricing**, and **operational 
   - `clean_citibike_csv.py`- helper script that cleans all CitiBike CSVs and export them as parquet.
   - `figures/` - generated plots used in the report.
   - `logs/`- all logs from data cleaning
+- **data/processed/**
+  - `cleaned_collision_data.csv` - cleaned collision data.
 
 *Raw datasets are not included and must be downloaded separately from official sources.*
 
@@ -38,7 +40,8 @@ The results support **user warnings**, **insurance pricing**, and **operational 
 ```bash
 git clone https://github.com/armoutihansen/DSC.git
 cd DSC
-# create environment as you prefer (conda/venv)
-pip install -r requirements.txt  # if available, otherwise install packages used in notebooks
-jupyter lab
+conda env create -f environment.yml
+conda activate dsc
+python ./src/download_citibike.py --raw_dir ./data/raw/citibike (Warning: takes a long time)
+python ./src/clean_citibike_csv.py --raw_dir ./data/raw/citibike --out_dir ../data/processed/citibike
 ```
