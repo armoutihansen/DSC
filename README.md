@@ -40,8 +40,8 @@ The results support **user warnings**, **insurance pricing**, and **operational 
 ```bash
 git clone https://github.com/armoutihansen/DSC.git
 cd DSC
-conda env create -f environment.yml
+conda env create -f ./environment.yml
 conda activate dsc
-python ./src/download_citibike.py --raw_dir ./data/raw/citibike (Warning: takes a long time)
+python ./src/download_citibike.py --raw_dir ./data/raw/citibike # Warning: very large files!
 python ./src/clean_citibike_csv.py --raw_dir ./data/raw/citibike --out_dir ../data/processed/citibike
 ```
