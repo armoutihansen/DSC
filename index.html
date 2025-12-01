@@ -181,7 +181,7 @@
 <header>
   <div class="header-inner">
     <div class="title-block">
-      <h1>CitiBike NYC: Demand, Risk, and Net Flow (2023–2025)</h1>
+      <h1>CitiBike NYC: Demand, Risk, and Net Flow (2023-2025)</h1>
       <p class="tagline">Exploring how CitiBike usage and crash risk data can create value for CitiBike and an insurance partner.</p>
     </div>
     <nav>
@@ -202,7 +202,7 @@
 
   <h3>1.1 Background</h3>
   <p>
-    CitiBike is New York City’s largest bikeshare system, used for millions of short trips each month.
+    CitiBike is New York City's largest bikeshare system, used for millions of short trips each month.
     Despite its scale and role as public-transport substitute, riders currently receive
     <strong>no accident or liability insurance</strong>. Use of the system requires accepting a
     broad <strong><a href="https://assets.citibikenyc.com/liability-waiver.html">liability waiver</a></strong>, meaning riders effectively <em>self-insure</em>
@@ -231,7 +231,7 @@
 
   <h3>1.2 Data &amp; Time Frame</h3>
   <ul>
-    <li><strong>CitiBike trip data:</strong> January 2023 – October 2025 (station, timestamps, bike type, user type, start and end location).</li>
+    <li><strong>CitiBike trip data:</strong> January 2023 - October 2025 (station, timestamps, bike type, user type, start and end location).</li>
     <li><strong>NYPD collision data:</strong> detailed crash records including severity, injuries, fatalities, and location.</li>
   </ul>
 
@@ -315,7 +315,7 @@
     <li><strong>Per-station usage</strong> (bottom panel) shows the same seasonal pattern and similarly minimal growth from 2024 → 2025.</li>
   </ul>
 
-  <p><strong>Actionable insights (from the notebook):</strong></p>
+  <p><strong>Actionable insights:</strong></p>
   <ul>
     <li><strong>Winter demand stimulation:</strong> promotional campaigns, discounted rides, or seasonal memberships.</li>
     <li><strong>Acquire non-users:</strong> insurance partnerships can reduce perceived safety risks and help expand the user base.</li>
@@ -347,7 +347,7 @@
     <li>A small set of stations exhibit <strong>large persistent net losses or gains</strong> (20–30 bikes/day). These stations form structural sources and sinks.</li>
   </ul>
 
-  <p><strong>Actionable insights (from the notebook):</strong></p>
+  <p><strong>Actionable insights:</strong></p>
   <ul>
     <li><strong>Net flow prediction is needed:</strong> persistent, predictable imbalances warrant a model.</li>
     <li><strong>Use forecasts for targeted redistribution</strong> to prevent empty or full stations.</li>
@@ -481,7 +481,7 @@
     \[
       R_{j,b} = \frac{H_{j,b}}{E_{j,b} + \epsilon}.
     \]
-    To stabilize noisy ratios, the notebook applies <strong>Empirical Bayes smoothing</strong>:
+    To stabilize noisy ratios, we apply <strong>Empirical Bayes smoothing</strong>:
   </p>
   <p>
     \[
@@ -522,7 +522,7 @@
   <em>[Figure: Station-level EB risk map]</em>
 </div>
 
-  <p><strong>Key findings from the notebook:</strong></p>
+  <p><strong>Key findings from the analysis:</strong></p>
   <ul>
     <li>Most stations have <strong>very low per-trip risk</strong>.</li>
     <li>A small set of stations exhibit <strong>high or very high risk</strong>, driven by
@@ -547,8 +547,8 @@
   <ul>
     <li><strong>Time of day dominates risk.</strong></li>
     <li>Morning, midday, and early evening have <strong>similarly low risk</strong>.</li>
-    <li><strong>Late evening ≈ 2× midday risk.</strong></li>
-    <li><strong>Night (20:00–05:00) = 4–5× daytime risk</strong> — the largest single effect.</li>
+    <li><strong>Late evening approx. 1.5* midday risk.</strong></li>
+    <li><strong>Night (20:00–05:00) = 3–4* daytime risk</strong> — the largest single effect.</li>
     <li>Weekday differences are minimal; weekends slightly higher.</li>
   </ul>
 
@@ -571,19 +571,19 @@
 
   <p><strong>Findings:</strong></p>
   <ul>
-    <li>Many stations are <strong>safe during the day but high-risk at night</strong>.</li>
+    <li>Some stations are <strong>safe during the day but high-risk at night</strong>.</li>
     <li>Some stations have <strong>evening-specific spikes</strong> linked to commuting patterns.</li>
-    <li>A small subset remains <strong>high-risk at all times</strong>, consistent with structural design issues.</li>
+    <li>Some stations remain <strong>high-risk at all times</strong>, consistent with structural design issues.</li>
   </ul>
 
   <h3>3.7 Use for CitiBike & Insurers</h3>
+  <div class="callout">
   <ul>
     <li><strong>User safety alerts:</strong> highlight high-risk stations and nighttime conditions.</li>
-    <li><strong>Insurance pricing:</strong> use \(R_{j,b}^{\mathrm{EB}}\) or \(R_{j,t}^{\mathrm{EB}}\) for risk-based premiums.</li>
+    <li><strong>Insurance pricing:</strong> use the risk measure for risk-based premiums.</li>
     <li><strong>Operational targeting:</strong> identify night-time or location-specific safety improvement opportunities.</li>
-    <li><strong>Portfolio management:</strong> isolate high-severity, low-frequency pockets for special attention.</li>
   </ul>
-
+  </div>
 </section>
 
 
