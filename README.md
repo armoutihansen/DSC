@@ -3,19 +3,25 @@
 This repository contains a data-science study combining **CitiBike trip data** with **NYPD collision data** to analyze demand, station-level net flow, and a transparent **risk-per-trip** measure (by station, time of day, and their interaction).  
 The results support **user warnings**, **insurance pricing**, and **operational safety interventions**.
 
-👉 **Live report (HTML):** https://armoutihansen.xyz/DSC/  
+👉 **Report:** https://armoutihansen.xyz/DSC/  
 
 ---
 
 ## Repository Structure (Short)
 
-- **index.html** — main narrative report with all figures and analysis.
+- **index.html** — report with all figures and analysis.
 - **notebooks/**
   - `clean_citibike.ipynb` — example workflow for cleaning CitiBike data.
   - `clean_collision_data.ipynb` — cleaning + cyclist-involvement parsing for NYPD crash data.
+  - `EDA_citibike.ipynb`- data analysis of CitiBike data.
+  - `risk_analysis.ipynb`- Risk analysis.
+  - `net_flow_analysis.ipynb`- Net flow prediction.
   - additional EDA, risk, and prediction notebooks (demand, net flow, EB smoothing, etc.).
-- **src/** — helper scripts (risk computation, feature engineering, utilities).
-- **figures/** (if present) — generated plots used in the report.
+- **src/**
+  - `download_citibike.py`- helper script to download all CitiBike data.
+  - `clean_citibike_csv.py`- helper script that cleans all CitiBike CSVs and export them as parquet.
+  - `figures/` - generated plots used in the report.
+  - `logs/`- all logs from data cleaning
 
 *Raw datasets are not included and must be downloaded separately from official sources.*
 
@@ -23,10 +29,8 @@ The results support **user warnings**, **insurance pricing**, and **operational 
 
 ## Data Sources
 
-- **CitiBike System Data:** trip histories, station metadata.  
-  https://citibikenyc.com/system-data  
-- **NYPD Collision Data:** crash locations, severity, cyclist involvement.  
-  NYC Open Data portal.
+- [**CitiBike System Data:**](https://s3.amazonaws.com/tripdata/index.html)
+- [**NYPD Collision Data:**](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/about_data)
 
 ---
 
