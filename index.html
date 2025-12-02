@@ -589,6 +589,7 @@ with A: arrivals, D: departures. Negative values indicate stations that tend to 
 
 
   <!-- 4. Net Flow Prediction -->
+  <!--
 <section id="net-flow">
   <h2>4. Net Flow Prediction</h2>
 
@@ -634,7 +635,92 @@ with A: arrivals, D: departures. Negative values indicate stations that tend to 
     <li>\(+1\): likely over-supply (filling station).</li>
   </ul>
 
-  <h3>4.3 Features & Model</h3>
+    <h3>4.3 Prediction Setup and Data Split</h3>
+  <p>
+    The operational question is: <em>which stations will be under- or over-supplied tomorrow?</em>
+    For each station-day \((j, t)\), we therefore predict the imbalance class \(y_{j,t+1}\) using only
+    information that is available by the end of day \(t\).
+  </p>
+
+  <ul>
+    <li><strong>Prediction:</strong> one-day-ahead forecast of \(y_{j,t+1} \in \{-1, 0, +1\}\) for every station.</li>
+    <li><strong>Information:</strong> lagged net flow, lagged weather, calendar variables, and static station features up to day \(t\); no future information is used.</li>
+    <li><strong>Data split:</strong> train on 2023-2024, validate on early 2025, and evaluate on late 2025 to mimic real deployment and avoid temporal bias.</li>
+  </ul>
+
+  <p>
+    In principle, one could use a <em>temporal train-test split</em> combined with
+    <em>time-series cross-validation</em> on the training set for hyperparameter tuning.
+    However, given the size of the station-day panel, this would be computationally heavy.
+    We therefore use a simpler but still time-consistent <strong>train-validation-test</strong> split,
+    which preserves temporal ordering while remaining efficient.
+  </p>
+
+  <h3>4.4 Baseline Models</h3>
+  <p>
+    We benchmark the predictive models against two simple baselines.
+    These provide reference points for assessing how much a learned model outperforms
+    trivial or purely persistence-driven behavior.
+  </p>
+
+  <ul>
+    <li><strong>Baseline 0 — Always balanced:</strong>
+        predict class 0 for every station-day.
+        This yields high accuracy in an imbalanced dataset but cannot detect
+        under- or over-supply conditions.</li>
+
+    <li><strong>Baseline 1 — Persistence:</strong>
+        predict tomorrow’s class using today’s observed class \(y_{j,t}\).
+        This captures the idea that some imbalances may simply carry over
+        from one day to the next.</li>
+  </ul>
+
+  <p>
+    Because the operationally relevant classes (–1 and +1) are rare,
+    accuracy alone is uninformative. We therefore evaluate all models using
+    <strong>Macro-F1</strong> (balanced performance across all classes) and
+    <strong>per-class recall</strong> (ability to detect the critical
+    under- and over-supply cases). Both metrics are needed for a
+    operationally meaningful comparison.
+  </p>
+
+
+  <h3>4.5 Predictive Models and Features</h3>
+  <p>
+    Each station-day is represented by
+    lagged net flows, calendar features, station location,
+    and lagged weather (all known at prediction time).
+  </p>
+
+  <ul>
+    <li><strong>Net-flow dynamics:</strong> lag-1, lag-7, rolling mean.</li>
+    <li><strong>Calendar:</strong> weekday/weekend, month.</li>
+    <li><strong>Station:</strong> latitude, longitude.</li>
+    <li><strong>Weather (lagged):</strong> temperature, rain, snow.</li>
+  </ul>
+
+  <p>
+    We estimate two models:
+  </p>
+
+  <ul>
+    <li><strong>Multinomial logistic regression:</strong>
+        simple, interpretable linear benchmark.</li>
+    <li><strong>Gradient-boosted trees:</strong>
+        flexible non-linear model capturing spatial–temporal interactions.</li>
+  </ul>
+
+  <p>
+    Class weights address imbalance, and tuning follows the
+    time-consistent train–validation split. Performance is reported
+    using <strong>Macro-F1</strong> and <strong>per-class recall</strong>,
+    which reflect the importance of detecting under- and over-supply.
+  </p>
+
+  <h3>4.6 Results</h3>
+  To be done!
+
+   <h3>4.3 Features & Model</h3>
   <p>
     For each station-day, we use:
   </p>
@@ -649,14 +735,127 @@ with A: arrivals, D: departures. Negative values indicate stations that tend to 
     (e.g. gradient-boosted trees) with class weighting or macro F1 to ensure the under-/over-supply classes matter.
   </p>
 
-  <h3>4.4 Operational Value</h3>
+
+  <h3>4.7 Operational Value</h3>
   <ul>
     <li><strong>Proactive rebalancing:</strong> flag tomorrow’s problematic stations and plan routes and staffing.</li>
     <li><strong>Fewer outages:</strong> reduce empty/full stations and associated lost rides.</li>
     <li><strong>Cost efficiency:</strong> focus redistribution efforts where imbalances are predicted, not just observed.</li>
   </ul>
 </section>
+-->
 
+<section id="net-flow">
+  <h2>4. Net Flow Prediction</h2>
+
+  <p>
+    Net flow determines where CitiBike needs to rebalance. For station \(j\) and day \(t\):
+  </p>
+  <p>\[
+    \text{NetFlow}_{j,t} = A_{j,t} - D_{j,t},
+  \]</p>
+  <p>
+    where negative values indicate emptying stations and positive values indicate filling stations.
+  </p>
+
+  <h3>4.1 From Distribution to Prediction Target</h3>
+  <div class="figure">
+    <img src="src/figures/net_flow_distribution.png">
+    <em>[Figure: Distribution of station-day net flows]</em>
+  </div>
+  <ul>
+    <li>Most station-days lie near zero (balanced).</li>
+    <li>Operational concern lies in the tails: large negative or positive net flows.</li>
+    <li>Source–sink patterns are persistent and seasonal → structurally predictable.</li>
+  </ul>
+  <p>
+    We therefore predict <em>imbalance classes</em> rather than exact values.
+  </p>
+
+  <h3>4.2 Ternary Imbalance Classification</h3>
+  <p>For each station-day \((j,t)\):</p>
+  <p>\[
+    y_{j,t} =
+    \begin{cases}
+      -1, & \text{if } \text{NetFlow}_{j,t} < -5, \\
+       0, & \text{if } |\text{NetFlow}_{j,t}| \le 5, \\
+       +1, & \text{if } \text{NetFlow}_{j,t} > 5.
+    \end{cases}
+  \]</p>
+  <ul>
+    <li>-1: likely under-supply (emptying station),</li>
+    <li>0: balanced,</li>
+    <li>+1: likely over-supply (filling station).</li>
+  </ul>
+
+  <h3>4.3 Prediction Setup and Data Split</h3>
+  <p>
+    We predict tomorrow's imbalance class \(y_{j,t+1}\) for each station using
+    only information available up to day \(t\).
+  </p>
+
+  <ul>
+    <li><strong>Horizon:</strong> one-day-ahead prediction of \(y_{j,t+1} \in \{-1,0,+1\}\).</li>
+    <li><strong>Features available at \(t\):</strong> lagged net flow, lagged weather, calendar variables, and station location.</li>
+    <li><strong>Split:</strong> train on 2023-2024, validate on early 2025, test on late 2025.</li>
+  </ul>
+
+  <p>
+    Time-series cross-validation would be ideal for hyperparameter tuning but is computationally expensive for the full
+    data set. A time-consistent train-validation-test split provides an efficient and
+    clean alternative.
+  </p>
+
+  <h3>4.4 Baseline Models</h3>
+  <p>
+    Two simple baselines provide reference points for evaluating model improvements.
+  </p>
+  <ul>
+    <li><strong>Baseline 0 — Always balanced:</strong> predict class 0 for all station-days.</li>
+    <li><strong>Baseline 1 — Persistence:</strong> predict \(y_{j,t+1} = y_{j,t}\).</li>
+  </ul>
+  <p>
+    Because under- and over-supply cases are rare, accuracy is uninformative.
+    We instead report <strong>Macro-F1</strong> (balanced performance across classes)
+    and <strong>per-class recall</strong> (ability to detect rare but critical events).
+  </p>
+
+  <h3>4.5 Predictive Models and Features</h3>
+  <p>
+    Each station-day is characterized by lagged imbalance signals, calendar structure,
+    station location, and lagged weather — all observable at prediction time.
+  </p>
+
+  <ul>
+    <li><strong>Net-flow dynamics:</strong> lag-1, lag-7, rolling mean.</li>
+    <li><strong>Calendar:</strong> weekday/weekend, month.</li>
+    <li><strong>Station:</strong> latitude, longitude.</li>
+    <li><strong>Weather (lagged):</strong> temperature, rain, snow.</li>
+  </ul>
+
+  <p>
+    We estimate two models:
+  </p>
+  <ul>
+    <li><strong>Multinomial logistic regression:</strong> simple, interpretable linear benchmark.</li>
+    <li><strong>Gradient-boosted trees:</strong> flexible non-linear model capturing spatial–temporal interactions.</li>
+  </ul>
+
+  <p>
+    Class weights compensate for imbalance during training.
+    All tuning follows the time-consistent train–validation setup.
+  </p>
+
+  <h3>4.6 Results</h3>
+  <p>To be completed.</p>
+
+  <h3>4.7 Operational Value</h3>
+  <ul>
+    <li><strong>Proactive rebalancing:</strong> identify tomorrow’s problematic stations.</li>
+    <li><strong>Fewer outages:</strong> reduce empty/full stations and lost rides.</li>
+    <li><strong>Cost efficiency:</strong> target redistribution to where imbalance is predicted, not just observed.</li>
+  </ul>
+</section>
 
 
   <!-- 5. Conclusion -->
