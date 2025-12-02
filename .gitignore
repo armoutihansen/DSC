@@ -2,6 +2,7 @@
 /data/processed/citibike/
 /data/Motor_Vehicle_Collisions_-_Crashes_20251117.csv
 /data/MVCollisionsDataDictionary_20190813_ERD.xlsx
+/notebooks/catboost_info/
 *.ipynb_checkpoints
 __pycache__/
 .env

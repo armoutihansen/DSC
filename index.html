@@ -160,6 +160,43 @@
         margin-right: 1rem;
       }
     }
+    details.callout {
+  border: 1px solid #bcd7f5;
+  border-radius: 8px;
+  background: #eef6ff;
+  padding: 0;
+  margin: 1em 0;
+}
+
+/* Make the summary look like a header bar */
+details.callout > summary {
+  cursor: pointer;
+  padding: 0.6em 1em;
+  font-weight: 600;
+  color: #123456;        /* force a dark text color */
+  font-size: 0.95rem;    /* make sure it’s not zero */
+  list-style: none;
+  border-bottom: 1px solid #d6e6f8;
+}
+
+/* Optional: custom arrow */
+details.callout > summary::-webkit-details-marker {
+  display: none;
+}
+details.callout > summary::before {
+  content: "▶";
+  font-size: 0.8em;
+  margin-right: 0.5em;
+  transition: transform 0.2s ease;
+}
+details.callout[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+/* Inner content */
+details.callout > *:not(summary) {
+  padding: 0.8em 1em;
+}
   </style>
 
   <!-- MathJax 3 configuration for LaTeX support -->
@@ -518,7 +555,7 @@ with A: arrivals, D: departures. Negative values indicate stations that tend to 
 
   <p><strong>Key findings from the analysis:</strong></p>
   <ul>
-    <li>Most stations have <strong>very low per-trip risk</strong>.</li>
+    <li>Most stations have <strong>low to medium per-trip risk</strong>.</li>
     <li>A small set of stations exhibit <strong>high or very high risk</strong>, driven by
         repeated cyclist crashes, injuries/fatalities, or low exposure.</li>
     <li>Level of risk at the station-level tend to cluster geographically, indicating </li>
@@ -819,6 +856,13 @@ with A: arrivals, D: departures. Negative values indicate stations that tend to 
     We instead report <strong>Macro-F1</strong> (balanced performance across classes)
     and <strong>per-class recall</strong> (ability to detect rare but critical events).
   </p>
+  
+  <details class="callout">
+  <summary>Evaluation metrics.</summary>
+  <p>
+    We report <em>Macro-F1</em> and <em>per-class recall</em>, which are appropriate for this imbalanced three-class setting. The <em>F1-score</em> for a class is the harmonic mean of precision and recall, balancing how often the model’s positive predictions are correct (precision) with how many true cases it successfully detects (recall). <em>Macro-F1</em> computes the F1-score separately for each class (−1, 0, +1) and then averages them with equal weight, preventing the majority class from dominating performance. <em>Per-class recall</em> measures the share of actual instances of each class that the model identifies correctly; high recall for −1 and +1 is operationally crucial because missing an emptying or filling station is far more costly than misclassifying a balanced one. These metrics therefore capture performance on the rare but important imbalance events that CitiBike cares about.
+  </p>
+</details>
 
   <h3>4.5 Predictive Models and Features</h3>
   <p>
@@ -838,23 +882,94 @@ with A: arrivals, D: departures. Negative values indicate stations that tend to 
   </p>
   <ul>
     <li><strong>Multinomial logistic regression:</strong> simple, interpretable linear benchmark.</li>
-    <li><strong>Gradient-boosted trees:</strong> flexible non-linear model capturing spatial–temporal interactions.</li>
+    <li><strong>Gradient-boosted trees:</strong> flexible non-linear model capturing spatial-temporal interactions.</li>
   </ul>
 
   <p>
-    Class weights compensate for imbalance during training.
-    All tuning follows the time-consistent train–validation setup.
+    Class weights compensate for imbalance during training. These make the model pay more attention to the rare −1 and +1 cases by penalizing their misclassification more strongly, preventing the model from defaulting to the majority class.
+    All tuning follows the time-consistent train-validation setup.
   </p>
 
   <h3>4.6 Results</h3>
-  <p>To be completed.</p>
+  <p>
+    Models are evaluated on the test set using <strong>Macro-F1</strong> and
+    <strong>per-class recall</strong>. Accuracy is not emphasized because the data are
+    strongly imbalanced.
+  </p>
+
+  <h4>Baseline Models</h4>
+  <p>
+    The two baseline models provide reference points. Baseline 0 (always
+    predicting “balanced”) achieves high accuracy but detects none of the
+    exporter or importer cases (Macro-F1 ≈ 0.28). Baseline 1 (persistence),
+    which predicts tomorrow’s class as today’s, performs better
+    (Macro-F1 ≈ 0.38) by exploiting simple day-to-day persistence, but still
+    identifies only about 16–19% of exporter/importer station-days.
+  </p>
+
+  <h4>Multinomial Logistic Regression</h4>
+  <p>
+    The multinomial logistic regression with class weights improves minority
+    detection substantially. It identifies roughly <strong>50–56%</strong> of
+    exporter and importer station-days and reaches a
+    <strong>Macro-F1 ≈ 0.40</strong>. This confirms that lagged net flow,
+    calendar structure, and weather features contain useful predictive signal,
+    but the linear decision boundary limits performance on more complex spatial–
+    temporal patterns.
+  </p>
+
+  <h4>Gradient-Boosted Trees (CatBoost)</h4>
+  <p>
+    The <strong>CatBoost gradient-boosting model is the best-performing
+    approach</strong>. On the test set it achieves:
+  </p>
+  <ul>
+    <li><strong>Exporter recall:</strong> 0.60</li>
+    <li><strong>Importer recall:</strong> 0.60</li>
+    <li><strong>Balanced recall:</strong> 0.57</li>
+    <li><strong>Macro-F1:</strong> 0.51</li>
+  </ul>
+
+  <p>
+    Compared to Baseline 0, CatBoost improves Macro-F1 by about
+    <strong>+23 points</strong> (0.28 → 0.51) and raises minority-class recall
+    from 0% to 60%. Relative to the persistence baseline, minority recall
+    improves by more than a factor of three (≈0.16–0.19 → 0.60). Compared to
+    logistic regression, CatBoost increases Macro-F1 from roughly 0.40 to
+    0.51 and improves both exporter and importer recall
+    (from ≈0.50–0.56 to 0.60), reflecting its ability to capture nonlinear
+    spatial–temporal and weather interactions.
+  </p>
+
+  <h4>Trade-offs and Interpretation</h4>
+  <p>
+    CatBoost attains this gain by predicting minority classes more often, which
+    lowers recall for the balanced class (≈0.57 vs. ≈0.78 for the persistence
+    baseline). This trade-off is <em>appropriate</em> for the task: misclassifying
+    some balanced days as imbalanced has low operational cost, whereas missing
+    exporter or importer days leads directly to empty or full stations.
+    Overall, CatBoost makes the correct trade-off for proactive rebalancing and
+    is the preferred model for net-flow imbalance prediction.
+  </p>
+
+    <h4>Future Model Refinement</h4>
+  <p>
+    Although CatBoost performs best, several refinements are possible. Additional 
+    features such as improved weather representations, or 
+    station-level clustering may strengthen predictions. More targeted 
+    hyperparameter tuning and probabilistic calibration could further improve 
+    minority-class detection. Exploring alternative gradient-boosting models may also offer potential performance gains.
+  </p>
+
 
   <h3>4.7 Operational Value</h3>
+  <div class="callout">
   <ul>
-    <li><strong>Proactive rebalancing:</strong> identify tomorrow’s problematic stations.</li>
+    <li><strong>Proactive rebalancing:</strong> identify tomorrow's problematic stations.</li>
     <li><strong>Fewer outages:</strong> reduce empty/full stations and lost rides.</li>
     <li><strong>Cost efficiency:</strong> target redistribution to where imbalance is predicted, not just observed.</li>
   </ul>
+  </div>
 </section>
 
 
